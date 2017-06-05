@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<web-app>
+
+    <defaultDriver>chrome</defaultDriver>
+    <defaultDriver path="src/test/resources/drivers/chromedriver.exe">Chrome</defaultDriver>
+
+    <!-- Base URL of the application to test -->
+    <baseUrl>http://localhost:8080/</baseUrl>
+    <!-- A Java class to hold the Selenium steps to test the application in depth. Optionally required for in-depth authn/z and session management testing. -->
+    <class>net.continuumsecurity.GrootAnalyzer</class>
+
+    <sslyze>
+        <path>/opt/sslyze/sslyze_cli.py</path>
+        <option>--regular</option>
+    </sslyze>
+
+    <!-- Optional names of the session ID cookies for session management testing. -->
+    <sessionIds>
+        <name>JSESSIONID</name>
+    </sessionIds>
+
+    <users>
+        <user username="student" password="password"/>
+        <user username="teacher" password="password"/>
+        <user username="admin" password="password"/>
+    </users>
+
+    <!-- the default user to use when logging in to the app -->
+    <defaultUsername>student</defaultUsername>
+    <defaultPassword>password</defaultPassword>
+
+    <scanner>
+        <ignoreUrl>.*logout.*</ignoreUrl>
+        <spiderUrl>baseUrl</spiderUrl>
+    </scanner>
+
+
+    <incorrectPassword>SDFsdfwjx1</incorrectPassword>
+    <incorrectUsername>bobbles</incorrectUsername>
+
+
+    <zapPath>zap/zap.sh</zapPath>
+
+</web-app>

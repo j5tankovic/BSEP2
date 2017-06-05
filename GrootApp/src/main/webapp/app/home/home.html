@@ -1,0 +1,18 @@
+<section>
+    <div class="md-padding" layout="row" flex>
+        <div layout="row" flex>
+            <div class="parent" layout="column" ng-repeat="course in homeVm.userCourses" flex>
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{course.name}}</span>
+                        </md-card-title-text>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button class="md-raised" ng-click="homeVm.toCourse(course)">View course</md-button>
+                        </md-card-actions>
+                    </md-card-title>
+                </md-card>
+            </div>
+        </div>
+    </div>
+</section>

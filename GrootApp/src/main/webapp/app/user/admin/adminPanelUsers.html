@@ -1,0 +1,19 @@
+<section>
+    <div ng-if="!vm.isUserFormVisible">
+        <div>Users</div>
+        <input type="button" id="admin-btn-addUser" ng-click="vm.toggleUserFormVisibility()"/>
+        <div ng-repeat="user in vm.users">{{user.name}}</div>
+    </div>
+    <div ng-if="vm.isUserFormVisible">
+        <div>
+            <form>
+                <label>Name:</label><input ng-model="vm.newUser.name" type="text"/>
+                <label>Surname:</label><input ng-model="vm.newUser.surname" type="text"/>
+                <label>Username:</label><input ng-model="vm.newUser.username" type="text"/>
+                <label>Default password:</label><input ng-model="vm.newUser.password" type="text"/>
+                <label>Role:</label><input type="text" ng-model="vm.newUser.role"/>
+                <input type="button" ng-click="vm.addUser()"/>
+            </form>
+        </div>
+    </div>
+</section>

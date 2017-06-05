@@ -1,0 +1,17 @@
+<section>
+    <div ng-if="!vm.isCourseFormVisible">
+        <div>Courses</div>
+        <input type="button" id="admin-btn-addCourse" ng-click="vm.toggleCourseFormVisibility()"/>
+        <div ng-repeat="course in vm.courses">{{course.name}}</div>
+    </div>
+    <div ng-if="vm.isCourseFormVisible">
+        <div>
+            <form>
+                <label>Name:</label><input ng-model="vm.newCourse.name" type="text"/>
+               <!--change with selection -->
+                <label>Default user:</label><input ng-model="vm.newCourse.name" type="text"/>
+                <input type="button" ng-click="vm.addCourse()"/>
+            </form>
+        </div>
+    </div>
+</section>

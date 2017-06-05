@@ -1,0 +1,8 @@
+<section>
+    <div ng-click="vm.toUsers()">Users</div>
+    <div ng-click="vm.toCourses()">Courses</div>
+    <div>
+        <div ng-repeat="user in vm.users">{{user.name}}</div>
+    </div>
+    <ui-view></ui-view>
+</section>

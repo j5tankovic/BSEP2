@@ -1,0 +1,43 @@
+<section>
+    <div layout="row">
+        <div flex-gt-sm="70" flex>
+            <h1 class="md-headline">Announcements</h1>
+        </div>
+        <div ng-if="courseVm.loggedUser.role == 'TEACHER' && !courseVm.isAnnouncementFormVisible">
+            <md-button class="md-raised md-accent" id="announcements-btn-newAnnouncement" ng-click="courseVm.toggleFormVisibility()">New announcement</md-button>
+        </div>
+        <div ng-if="courseVm.loggedUser.role == 'TEACHER' && courseVm.isAnnouncementFormVisible">
+            <md-button class="md-raised md-accent" id="announcements-btn-cancel" ng-click="courseVm.toggleFormVisibility()">Cancel</md-button>
+        </div>
+    </div>
+    <div ng-if="!courseVm.isAnnouncementFormVisible">
+        <div layout="column" flex-md flex-gt-md="50">
+            <md-list-item layout-padding class="md-3-line" ng-repeat="announcement in courseVm.announcements" ng-click="courseVm.toAnnouncement(announcement)">
+                <div layout-padding>
+                    <div class="md-list-item-text" layout="column">
+                        <h3>{{ announcement.title }}</h3>
+                        <h4>{{ announcement.author.name }}</h4>
+                        <p class="md-block">{{ announcement.content }}</p>
+                    </div>
+                </div>
+            </md-list-item>
+        </div>
+    </div>
+    <div ng-if="courseVm.isAnnouncementFormVisible">
+        <md-content layout-padding layout-align="center center">
+            <div flex-gt-md="40" md-whiteframe="3">
+                <form layout="column">
+                        <md-input-container>
+                            <label>Title</label>
+                            <input ng-model="courseVm.formAnnouncement.title"/>
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Content</label>
+                            <textarea ng-model="courseVm.formAnnouncement.content" rows="3"></textarea>
+                        </md-input-container>
+                    <md-button class="md-raised md-primary" ng-click="courseVm.addAnnouncement(announcement)">Save</md-button>
+                </form>
+            </div>
+        </md-content>
+    </div>
+</section>

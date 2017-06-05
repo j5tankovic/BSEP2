@@ -1,0 +1,9 @@
+.DS_Store*
+.idea/*
+/target
+zap/tmp
+build/
+.gradle
+*.iml
+*.output
+log4j.properties

@@ -21,7 +21,7 @@ public class ZapManager {
     private static ZapManager instance = null;
     private int port;
     String HOST = "127.0.0.1";
-    int CONNECTION_TIMEOUT = 15000; //milliseconds
+    int CONNECTION_TIMEOUT = 150000; //milliseconds
     public static final String API_KEY = "zapapisecret";
     Process process;
 
@@ -47,12 +47,17 @@ public class ZapManager {
             params.add("-config"); params.add("api.key="+API_KEY);
             Config.getInstance().setProxyApi(API_KEY);
             String upstreamProxyHost = Config.getInstance().getUpstreamProxyHost();
+            System.out.println("Port is running");
+            System.out.println(port);
             if (upstreamProxyHost != null) {
                 int upstreamProxyPort = Config.getInstance().getUpstreamProxyPort();
-                log.info("Setting upstream proxy for ZAP to: "+upstreamProxyHost+":"+upstreamProxyPort);
-                params.add("-config"); params.add("connection.proxyChain.hostName="+upstreamProxyHost);
-                params.add("-config"); params.add("connection.proxyChain.port="+upstreamProxyPort);
-                params.add("-config"); params.add("connection.proxyChain.enabled=true");
+                log.info("Setting upstream proxy for ZAP to: " + upstreamProxyHost + ":" + upstreamProxyPort);
+                params.add("-config");
+                params.add("connection.proxyChain.hostName=" + upstreamProxyHost);
+                params.add("-config");
+                params.add("connection.proxyChain.port=" + upstreamProxyPort);
+                params.add("-config");
+                params.add("connection.proxyChain.enabled=true");
             }
             log.info("Start ZAProxy [" + zapProgramFile.getAbsolutePath() + "] on port: " + port);
             ProcessBuilder pb = new ProcessBuilder().inheritIO();

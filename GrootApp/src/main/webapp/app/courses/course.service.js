@@ -18,10 +18,11 @@
             findAll: findAll,
             findOne: findOne,
             addCourse: addCourse,
+            deleteCourse: deleteCourse,
             findAnnouncement: findAnnouncement,
             addAnnouncement: addAnnouncement,
             updateAnnouncement: updateAnnouncement,
-            deleteAnnouncement: deleteAnnouncement
+            deleteAnnouncement: deleteAnnouncement,
         };
 
         function findAll() {
@@ -36,6 +37,10 @@
             return $http.post(BASE_URL, course);
         }
 
+        function deleteCourse(courseId) {
+            return $http.delete(pathWithId(courseId));
+        }
+
         function findAnnouncement(courseId, announcementId) {
             return $http.get(pathWithId(courseId) + '/announcements/' + announcementId);
         }
@@ -48,8 +53,8 @@
             return $http.put(pathWithId(courseId) + `/announcements/${announcement.id}`, announcement);
         }
 
-        function deleteAnnouncement(courseId, announcementId) {
-            return $http.delete(pathWithId(courseId) + `/announcements/${announcementId}`)
+        function deleteAnnouncement(courseId, announcement) {
+            return $http.delete(pathWithId(courseId) + `/announcements/${announcement.id}`)
         }
     }
 })(angular);

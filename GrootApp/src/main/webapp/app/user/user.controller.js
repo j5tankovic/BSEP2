@@ -12,6 +12,7 @@
         var userVm = this;
 
         userVm.user = {};
+        userVm.userEdit = {};
         userVm.isEditFormVisible = false;
 
         userVm.editProfile = editProfile;
@@ -24,6 +25,7 @@
             var userId = loggedUser.id;
             userService.findOne(userId)
                 .then(function(response) {
+                    userVm.user.id = response.data.id;
                     userVm.user.name = response.data.name;
                     userVm.user.surname = response.data.surname;
                 }).catch(function(error) {
@@ -32,9 +34,10 @@
         }
 
         function editProfile() {
-            userService.editProfile(userVm.user)
+            userService.editProfile(userVm.user.id, userVm.userEdit)
                 .then(function(response) {
-                   activate();
+                   userVm.user = response.data;
+                   userVm.toggleFormVisibility();
                 }).catch(function(error) {
                 console.log("Failed");
             });
@@ -42,6 +45,7 @@
 
         function toggleFormVisibility() {
             userVm.isEditFormVisible = !userVm.isEditFormVisible;
+            userVm.userEdit = {};
         }
     }
 }(angular));

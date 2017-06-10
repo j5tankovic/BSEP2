@@ -48,7 +48,7 @@
         }
 
         function deleteOne() {
-            courseService.deleteAnnouncement(courseId, announcementVm.announcement.id)
+            courseService.deleteAnnouncement(courseId, announcementVm.announcement)
                 .then(function(response) {
                     $state.go('main.course.announcements');
                 }).catch(function(error) {

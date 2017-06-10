@@ -6,26 +6,19 @@
 
     <!-- Base URL of the application to test -->
     <baseUrl>http://localhost:8080/</baseUrl>
-    <!-- A Java class to hold the Selenium steps to test the application in depth. Optionally required for in-depth authn/z and session management testing. -->
-    <class>net.continuumsecurity.GrootAnalyzer</class>
+    <class>net.continuumsecurity.GrootAnalyzerNew</class>
 
     <sslyze>
         <path>/opt/sslyze/sslyze_cli.py</path>
         <option>--regular</option>
     </sslyze>
 
-    <!-- Optional names of the session ID cookies for session management testing. -->
-    <sessionIds>
-        <name>JSESSIONID</name>
-    </sessionIds>
-
     <users>
-        <user username="student" password="password"/>
         <user username="teacher" password="password"/>
+        <user username="student" password="password"/>
         <user username="admin" password="password"/>
     </users>
 
-    <!-- the default user to use when logging in to the app -->
     <defaultUsername>student</defaultUsername>
     <defaultPassword>password</defaultPassword>
 
@@ -34,11 +27,15 @@
         <spiderUrl>baseUrl</spiderUrl>
     </scanner>
 
+    <upstreamProxy>
+        <host></host>
+        <port></port>
+    </upstreamProxy>
 
-    <incorrectPassword>SDFsdfwjx1</incorrectPassword>
-    <incorrectUsername>bobbles</incorrectUsername>
+    <incorrectPassword>pogresnaSifra</incorrectPassword>
+    <incorrectUsername>pogresanUsername</incorrectUsername>
 
 
-    <zapPath>zap/zap.sh</zapPath>
+    <zapPath>zap/zap.bat</zapPath>
 
 </web-app>

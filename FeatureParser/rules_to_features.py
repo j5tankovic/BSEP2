@@ -26,19 +26,29 @@ def generate_not_allowed_rules(allowed_rules, rules_actions):
 
 
 def generate_scenario_for_allowed_rules(allowed_rules):
-	scenario =  " Scenario Outline: Users can view restricted resources for which they are authorised\n \
-				 Given a new browser or client instance\n \
-			     And the client/browser is configured to use an intercepting proxy\n \
-			     And the proxy logs are cleared\n \
-			     And the login page\n \
-			     And the username <username>\n \
-			     And the password <password>\n \
-			     When the user logs in\n \
-			     And the proxy logs are cleared\n\
-			     And the HTTP requests and responses are recorded\n\
-			     And they access the restricted resource: <method>\n\
-			     Then the string: <sensitiveData> should be present in one of the HTTP responses\n"
-	examples = " Examples:\n\t\tallowed_url | allowed_action | role\n"
+	scenario =  """ @allowed_urls
+  					Scenario Outline: Users can view restricted urls for which they are authorised
+				    	Given a new browser or client instance for grootApp
+				    	And the login page for grootApp
+				    	And the user with the role <role>
+				    	When the user logs in
+				    	And he goes to the <allowed_url>
+				    	And he executes <action>
+				    	Then the status code in response should be 200
+				    	Examples: """
+	# scenario =  " Scenario Outline: Users can view restricted resources for which they are authorised\n \
+	# 			 Given a new browser or client instance\n \
+	# 		     And the client/browser is configured to use an intercepting proxy\n \
+	# 		     And the proxy logs are cleared\n \
+	# 		     And the login page\n \
+	# 		     And the username <username>\n \
+	# 		     And the password <password>\n \
+	# 		     When the user logs in\n \
+	# 		     And the proxy logs are cleared\n\
+	# 		     And the HTTP requests and responses are recorded\n\
+	# 		     And they access the restricted resource: <method>\n\
+	# 		     Then the string: <sensitiveData> should be present in one of the HTTP responses\n"
+	examples = "\n\t\tallowed_url | action | role\n"
 
 	for key in allowed_rules:
 		for rules_actions in allowed_rules[key]:
@@ -48,17 +58,27 @@ def generate_scenario_for_allowed_rules(allowed_rules):
 
 	return scenario
 
-def generate_scenario_for_not_allowed_rules(not_allowed_rules):	
-	scenario =  " Scenario Outline: Users must not be able to view resources for which they are not authorised\n \
-    			Given the access control map for authorised users has been populated\n \
-    			And a new browser or client instance\n\
-    			And the username <username>\n \
-    			And the password <password>\n \
-    			And the login page\n \
-    			When the user logs in\n \
-    			And the previously recorded HTTP Requests for <method> are replayed using the current session ID\n \
-    			Then the string: <sensitiveData> should not be present in any of the HTTP responses\n"
-	examples = " Examples:\n\t\tnot_allowed_url | not_allowed_action | role\n"
+def generate_scenario_for_not_allowed_rules(not_allowed_rules):
+	scenario =  """ @not_allowed_urls
+  				   	Scenario Outline: Users must not be able to view urls for which they are not authorised
+    					Given a new browser or client instance for grootApp
+					    And the login page for grootApp
+					    And the user with the role <role>
+				    	When the user logs in
+				    	And he goes to the <not_allowed_url>
+				    	And he executes <action>
+				    	Then the status code in response should be 403
+					    Examples: """
+	# scenario =  " Scenario Outline: Users must not be able to view resources for which they are not authorised\n \
+ #    			Given the access control map for authorised users has been populated\n \
+ #    			And a new browser or client instance\n\
+ #    			And the username <username>\n \
+ #    			And the password <password>\n \
+ #    			And the login page\n \
+ #    			When the user logs in\n \
+ #    			And the previously recorded HTTP Requests for <method> are replayed using the current session ID\n \
+ #    			Then the string: <sensitiveData> should not be present in any of the HTTP responses\n"
+	examples = "\n\t\tnot_allowed_url | action | role\n"
 
 	for key in not_allowed_rules:
 		for rules_actions in not_allowed_rules[key]:
@@ -69,13 +89,13 @@ def generate_scenario_for_not_allowed_rules(not_allowed_rules):
 	return scenario
 
 def generate_feature_file(allowed_rules, not_allowed_rules):
-	tag = '@authorisation\n'
-	feature = 'Feature: Authorisation and Access Control\n Verify that the access control model is enforced so that only the authorised users have access to their own data\n\n'
+	tag = '@grootauthorisationnew\n'
+	feature = 'Feature: Groot Authorisation and Access Control\n  Verify that the access control model is enforced so that only the authorised users have access to their own data\n\n'
 	allowed_resources_scenario = generate_scenario_for_allowed_rules(allowed_rules)
 	not_allowed_resources_scenario = generate_scenario_for_not_allowed_rules(not_allowed_rules)
 
 	lines = [tag, feature, allowed_resources_scenario, not_allowed_resources_scenario]
-	features_file = open('authorisation.feature', 'w')
+	features_file = open('groot_authorisation_new.feature', 'w')
 	features_file.writelines(lines)
 	features_file.close()
 

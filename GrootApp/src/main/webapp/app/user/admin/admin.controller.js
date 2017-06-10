@@ -3,59 +3,58 @@
 
     angular
         .module('groot')
-        .controller('AdminCtrlAs', AdminCtrlAs)
+        .controller('AdminCtrlAs', AdminCtrlAs);
 
     AdminCtrlAs.$inject = ['$state', 'courseService', 'userService'];
 
     function AdminCtrlAs($state, courseService, userService) {
 
-        var vm = this;
+        var adminVm = this;
 
-        vm.courses = [];
-        vm.users = [];
+        adminVm.courses = [];
+        adminVm.users = [];
 
-        vm.newUser = {};
-        vm.newCourse = {};
+        adminVm.newUser = {};
+        adminVm.newCourse = {};
 
-        vm.isUserFormVisible = false;
-        vm.isCourseFormVisible = false;
+        adminVm.isUserFormVisible = false;
+        adminVm.isCourseFormVisible = false;
 
-        vm.addCourse = addCourse;
-        vm.updateCourse = updateCourse;
-        vm.deleteCourse  = deleteCourse;
+        adminVm.addCourse = addCourse;
+        adminVm.deleteCourse  = deleteCourse;
 
-        vm.addUser = addUser;
-        vm.deleteUser = deleteUser;
-        vm.addUserToCourse = addUserToCourse;
+        adminVm.addUser = addUser;
+        adminVm.deleteUser = deleteUser;
 
-        vm.toUsers = toUsers;
-        vm.toCourses = toCourses;
-        vm.toCourse = toCourse;
+        adminVm.addUserToCourse = addUserToCourse;
 
-        vm.toggleUserFormVisibility = toggleUserFormVisibility;
-        vm.toggleCourseFormVisibility = toggleCourseFormVisibility;
+        adminVm.toUsers = toUsers;
+        adminVm.toCourses = toCourses;
+        adminVm.toCourse = toCourse;
+
+        adminVm.toggleUserFormVisibility = toggleUserFormVisibility;
+        adminVm.toggleCourseFormVisibility = toggleCourseFormVisibility;
 
         activate();
 
         function activate() {
-            //TODO: change function activate - admin
             userService.findAll()
                 .then(function(response) {
-                    vm.users = response.data;
+                    adminVm.users = response.data;
                 }).catch(function(error) {
                     console.log("Failed due to", error);
             });
 
             courseService.findAll()
                 .then(function(response) {
-                    vm.courses = response.data;
+                    adminVm.courses = response.data;
                 }).catch(function(error){
                     console.log("Failed due to", error);
             });
         }
 
         function addCourse() {
-            courseService.addCourse(vm.newCourse)
+            courseService.addCourse(adminVm.newCourse)
                 .then(function(response){
                     toggleCourseFormVisibility();
                     activate();
@@ -64,37 +63,32 @@
             });
         }
 
-        function updateCourse(course) {
-            courseService.updateCourse(course)
+        function deleteCourse(course) {
+            courseService.deleteCourse(course.id)
                 .then(function(response){
-                    //TODO
-                }).catch(function(error) {
-                    //TODO
-            })
-        }
-
-        function deleteCourse(courseId) {
-            courseService.deleteCourse(courseId)
-                .then(function(response){
-                    //TODO
+                    activate();
                 }).catch(function(error){
                     //TODO
             })
         }
 
         function addUser() {
-            userService.addUser(vm.newUser)
+            userService.add(adminVm.newUser)
                 .then(function(response){
-                   vm.toggleUserFormVisibility();
+                   toggleUserFormVisibility();
                    activate();
                 }).catch(function(error) {
-                    //TODO: change error function - addUser
                     console.log("Failed due to", error);
             })
         }
 
-        function deleteUser() {
-
+        function deleteUser(user) {
+            userService.deleteOne(user.id)
+                .then(function(response) {
+                    activate();
+                }).catch(function(error) {
+                console.log("Failed due to", error);
+            });
         }
 
         function addUserToCourse() {
@@ -115,11 +109,13 @@
 
 
         function toggleUserFormVisibility() {
-            vm.isUserFormVisible = !vm.isUserFormVisible;
+            adminVm.isUserFormVisible = !adminVm.isUserFormVisible;
+            adminVm.newUser = {};
         }
 
         function toggleCourseFormVisibility() {
-            vm.isCourseFormVisible = !vm.isCourseFormVisible;
+            adminVm.isCourseFormVisible = !adminVm.isCourseFormVisible;
+            adminVm.newCourse = {};
         }
 
     }

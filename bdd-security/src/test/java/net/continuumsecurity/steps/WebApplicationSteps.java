@@ -27,6 +27,7 @@ import cucumber.api.java.en.When;
 import edu.umass.cs.benchlab.har.HarCookie;
 import edu.umass.cs.benchlab.har.HarEntry;
 import edu.umass.cs.benchlab.har.HarRequest;
+import edu.umass.cs.benchlab.har.HarResponse;
 import net.continuumsecurity.*;
 import net.continuumsecurity.behaviour.ILogin;
 import net.continuumsecurity.behaviour.ILogout;
@@ -394,6 +395,9 @@ public class WebApplicationSteps {
             return;
         }
         World.getInstance().getMethodProxyMap().put(methodName, getProxy().getHistory());
+        List<HarEntry> harEntries =  World.getInstance().getMethodProxyMap().get(methodName);
+        HarEntry lastHarEntry = harEntries.get(harEntries.size()-1);
+        int statusCode = lastHarEntry.getResponse().getStatus();
         boolean accessible = getProxy().findInResponseHistory(sensitiveData).size() > 0;
         if (accessible) {
             log.debug("User: " + credentials.getUsername() + " can access resource: " + methodName);

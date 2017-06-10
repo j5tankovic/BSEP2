@@ -1,6 +1,7 @@
 package com.groot.education.service.impl;
 
 import com.groot.education.model.Course;
+import com.groot.education.model.Role;
 import com.groot.education.model.User;
 import com.groot.education.repository.CourseRepository;
 import com.groot.education.repository.UserRepository;
@@ -41,21 +42,30 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void add(User user) {
+        setPermissionsAccordingToRole(user);
         userRepository.save(user);
     }
 
     @Override
-    public void modify(User user) {
+    public User edit(User original, User toEdit) {
+        original.setName(toEdit.getName());
+        original.setSurname(toEdit.getSurname());
 
+        return userRepository.save(original);
     }
 
     @Override
     public void delete(long id) {
-
+        userRepository.delete(id);
     }
 
     @Override
     public List<Course> findCourses() {
         return null;
+    }
+
+    private void setPermissionsAccordingToRole(User user) {
+        Role role = user.getRole();
+        user.setPermissions(role.getPermissions());
     }
 }

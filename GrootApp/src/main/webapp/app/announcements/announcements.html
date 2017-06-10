@@ -29,13 +29,13 @@
                 <form layout="column">
                         <md-input-container>
                             <label>Title</label>
-                            <input ng-model="courseVm.formAnnouncement.title"/>
+                            <input id="announcements-input-title" ng-model="courseVm.formAnnouncement.title"/>
                         </md-input-container>
                         <md-input-container>
                             <label>Content</label>
-                            <textarea ng-model="courseVm.formAnnouncement.content" rows="3"></textarea>
+                            <textarea id="announcements-textarea-content" ng-model="courseVm.formAnnouncement.content" rows="3"></textarea>
                         </md-input-container>
-                    <md-button class="md-raised md-primary" ng-click="courseVm.addAnnouncement(announcement)">Save</md-button>
+                    <md-button id="announcements-btn-save" class="md-raised md-primary" ng-click="courseVm.addAnnouncement(announcement)">Save</md-button>
                 </form>
             </div>
         </md-content>

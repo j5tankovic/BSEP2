@@ -1,7 +1,7 @@
 <section>
-    <div ng-if="!userVm.isEditFormVisible">
-    <div>{{userVm.user.name}}</div>
-    <div>{{userVm.user.surname}}</div>
+    <div layout="row" ng-if="!userVm.isEditFormVisible">
+        <div>{{userVm.user.name}}</div>
+        <div>{{userVm.user.surname}}</div>
         <md-button class="md-raised" id="profile-btn-edit" ng-click="userVm.toggleFormVisibility()">Edit</md-button>
     </div>
     <div ng-if="userVm.isEditFormVisible">
@@ -10,13 +10,16 @@
                 <form layout="column">
                     <md-input-container>
                         <label>Name</label>
-                        <input ng-model="userVm.userEdit.name"/>
+                        <input id="profile-input-name" ng-model="userVm.userEdit.name"/>
                     </md-input-container>
                     <md-input-container>
                         <label>Surname</label>
-                        <textarea ng-model="userVm.userEdit.surname" rows="3"></textarea>
+                        <input id="profile-input-surname" ng-model="userVm.userEdit.surname"/>
                     </md-input-container>
-                    <md-button class="md-raised md-primary" ng-click="userVM.editProfile()">Save</md-button>
+                    <div layout="row">
+                        <md-button id="profile-btn-editSave" class="md-raised md-primary" ng-click="userVm.editProfile()">Save</md-button>
+                        <md-button id="profile-btn-editCancel" class="md-raised md-primary" ng-click="userVm.toggleFormVisibility()">Cancel</md-button>
+                    </div>
                 </form>
             </div>
         </md-content>

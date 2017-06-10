@@ -67,14 +67,14 @@ public class UserController {
 
     @Transactional
     @PutMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('UPDATE_PROFILE')")
+    @PreAuthorize("hasAnyAuthority('EDIT_PROFILE')")
     public ResponseEntity editProfile(@PathVariable long id,
                                       @RequestBody UserDTO userDTO) {
-        User original = userService.findById(id).orElseThrow(NotFoundException::new);
+        User user = userService.findById(id).orElseThrow(NotFoundException::new);
         User toEdit = convertFromDTO(userDTO);
-        userService.edit(user);
+        User edited = userService.edit(user, toEdit);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(edited, HttpStatus.OK);
     }
 
     @Transactional

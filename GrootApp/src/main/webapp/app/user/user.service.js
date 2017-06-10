@@ -18,9 +18,10 @@
             findAll: findAll,
             findOne: findOne,
             findOneByToken: findOneByToken,
-            addUser: addUser,
+            add: add,
+            deleteOne: deleteOne,
             findCourses: findCourses,
-            editProfile: editProfile,
+            editProfile: editProfile
         };
 
         function findAll() {
@@ -40,8 +41,12 @@
             return $http.get(BASE_URL + "/" + token);
         }
 
-        function addUser(user) {
+        function add(user) {
             return $http.post(BASE_URL, user);
+        }
+
+        function deleteOne(userId){
+            return $http.delete(pathWithId(userId));
         }
 
         function editProfile(id, userToEdit) {

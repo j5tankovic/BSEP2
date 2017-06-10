@@ -18,8 +18,16 @@ public class Course {
     @ManyToMany
     private List<User> users;
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course", cascade = {CascadeType.REMOVE})
     private List<Announcement> announcements;
+
+    @PreRemove
+    public void removeUserFromCourse() {
+        for (User user: users) {
+            user.getCourses().remove(this);
+        }
+        users.clear();
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -1,19 +1,54 @@
 <section>
-    <div ng-if="!vm.isUserFormVisible">
-        <div>Users</div>
-        <input type="button" id="admin-btn-addUser" ng-click="vm.toggleUserFormVisibility()"/>
-        <div ng-repeat="user in vm.users">{{user.name}}</div>
-    </div>
-    <div ng-if="vm.isUserFormVisible">
-        <div>
-            <form>
-                <label>Name:</label><input ng-model="vm.newUser.name" type="text"/>
-                <label>Surname:</label><input ng-model="vm.newUser.surname" type="text"/>
-                <label>Username:</label><input ng-model="vm.newUser.username" type="text"/>
-                <label>Default password:</label><input ng-model="vm.newUser.password" type="text"/>
-                <label>Role:</label><input type="text" ng-model="vm.newUser.role"/>
-                <input type="button" ng-click="vm.addUser()"/>
-            </form>
+    <div layout="row">
+        <div flex-gt-sm="70" flex>
+            <h1 class="md-headline">Users</h1>
         </div>
+        <div ng-if="!adminVm.isUserFormVisible">
+            <md-button class="md-raised md-accent" id="admin-btn-addUser" ng-click="adminVm.toggleUserFormVisibility()">New User</md-button>
+        </div>
+        <div ng-if="adminVm.isUserFormVisible">
+            <md-button class="md-raised md-accent" id="admin-btn-userCancel" ng-click="adminVm.toggleUserFormVisibility()">Cancel</md-button>
+        </div>
+    </div>
+    <div ng-if="!adminVm.isUserFormVisible">
+        <div layout="column" flex-md flex-gt-md="50">
+            <md-list-item layout-padding ng-repeat="user in adminVm.users">
+                <h3>{{ user.name }} {{user.surname}}</h3>
+                <md-button id="admin-btn-deleteUser" class="md-raised md-accent md-secondary" ng-click="adminVm.deleteUser(user)">Delete</md-button>
+            </md-list-item>
+        </div>
+    </div>
+    <div ng-if="adminVm.isUserFormVisible">
+        <md-content layout-padding layout-align="center center">
+            <div flex-gt-md="40" md-whiteframe="3">
+                <form layout="column">
+                    <md-input-container>
+                        <label>Name</label>
+                        <input id="admin-input-user-name" ng-model="adminVm.newUser.name" type="text"/>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Surname</label>
+                        <input id="admin-input-user-surname" ng-model="adminVm.newUser.surname" type="text"/>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Username</label>
+                        <input id="admin-input-user-username" ng-model="adminVm.newUser.username" type="text"/>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Password</label>
+                        <input id="admin-input-user-password" ng-model="adminVm.newUser.password" type="password"/>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Role</label>
+                        <md-select id="admin-input-user-role" ng-model="adminVm.newUser.role">
+                            <md-option ng-value="STUDENT"><em>STUDENT</em></md-option>
+                            <md-option ng-value="TEACHER"><em>TEACHER</em></md-option>
+                            <md-option ng-value="ADMIN"><em>ADMIN</em></md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-button id="admin-btn-saveUser" class="md-raised md-primary" ng-click="adminVm.addUser()">Save</md-button>
+                </form>
+            </div>
+        </md-content>
     </div>
 </section>

@@ -6,18 +6,13 @@ import net.continuumsecurity.behaviour.ILogout;
 import net.continuumsecurity.behaviour.INavigable;
 import net.continuumsecurity.web.WebApplication;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
 
-public class GrootAnalyzer extends WebApplication implements ILogin, ILogout, INavigable {
+public class GrootAnalyzerNew extends WebApplication implements ILogin, ILogout, INavigable {
 
-    //since GrootEdu app is using angular ui-router, this part is needed
     private final String HASH_URL_PART = "#!";
 
     @Override
     public void login(Credentials credentials) {
-        System.out.println(credentials.get("username"));
-        System.out.println(credentials.get("password"));
         UserPassCredentials creds = new UserPassCredentials(credentials);
         driver.findElement(By.id("login-input-username")).clear();
         driver.findElement(By.id("login-input-username")).sendKeys(creds.getUsername());
@@ -36,6 +31,7 @@ public class GrootAnalyzer extends WebApplication implements ILogin, ILogout, IN
 
     @Override
     public boolean isLoggedIn() {
+        //TODO: change isLoggedIn
 //        driver.get(Config.getInstance().getBaseUrl() + "#!/home");
 //        try{
 //            WebElement element = driver.findElement(By.id("main-btn-logout"));
@@ -71,34 +67,86 @@ public class GrootAnalyzer extends WebApplication implements ILogin, ILogout, IN
     }
 
     public void editProfile(String url) {
+        System.out.println("Url is:" + url);
         driver.get(Config.getInstance().getBaseUrl() + HASH_URL_PART + url);
-        driver.findElement(By.id("profile-btn-edit"));
+
+        driver.findElement(By.id("profile-btn-edit")).click();
+
+        driver.findElement(By.id("profile-input-name")).clear();
+        driver.findElement(By.id("profile-input-name")).sendKeys("Radovan555");
+
+        driver.findElement(By.id("profile-input-surname")).clear();
+        driver.findElement(By.id("profile-input-surname")).sendKeys("Radovanko555");
+
+        driver.findElement(By.id("profile-btn-editSave")).click();
     }
 
     public void addAnnouncement(String url) {
         driver.get(Config.getInstance().getBaseUrl() + HASH_URL_PART+ url);
-        driver.findElement(By.id("announcements-btn-newAnnouncement"));
+        findAndWaitForElement(By.id("announcements-btn-newAnnouncement"));
+
+        driver.findElement(By.id("announcements-btn-newAnnouncement")).click();
+
+        driver.findElement(By.id("announcements-input-title")).clear();
+        driver.findElement(By.id("announcements-input-title")).sendKeys("Announcement1");
+
+        driver.findElement(By.id("announcements-textarea-content")).clear();
+        driver.findElement(By.id("announcements-textarea-content")).sendKeys("Content for announcement");
+
+        driver.findElement(By.id("announcements-btn-save")).click();
     }
 
     public void editAnnouncement(String url) {
         driver.get(Config.getInstance().getBaseUrl() + HASH_URL_PART + url);
-        driver.findElement(By.id("announcement-btn-edit"));
+        driver.findElement(By.id("announcement-btn-edit")).click();
+
+        driver.findElement(By.id("announcement-input-title")).clear();
+        driver.findElement(By.id("announcement-input-title")).sendKeys("Announcement 3dited");
+
+        driver.findElement(By.id("announcement-textarea-content")).clear();
+        driver.findElement(By.id("announcement-textarea-content")).sendKeys("Content for announcement 3dited");
+
+        driver.findElement(By.id("announcement-btn-save")).click();
     }
 
     public void deleteAnnouncement(String url) {
         driver.get(Config.getInstance().getBaseUrl() + HASH_URL_PART + url);
-        driver.findElement(By.id("announcement-btn-delete"));
+
+        driver.findElement(By.id("announcement-btn-delete")).click();
     }
 
     public void addUser(String url) {
         driver.get(Config.getInstance().getBaseUrl() + HASH_URL_PART + url);
-        driver.findElement(By.id("admin-btn-addUser"));
+        driver.findElement(By.id("admin-btn-addUser")).click();
+
+        driver.findElement(By.id("admin-input-user-name")).clear();
+        driver.findElement(By.id("admin-input-user-name")).sendKeys("User1 Name");
+
+        driver.findElement(By.id("admin-input-user-surname")).clear();
+        driver.findElement(By.id("admin-input-user-surname")).sendKeys("User1 Surname");
+
+        driver.findElement(By.id("admin-input-user-username")).clear();
+        driver.findElement(By.id("admin-input-user-username")).sendKeys("User1 username");
+
+        driver.findElement(By.id("admin-input-user-password")).clear();
+        driver.findElement(By.id("admin-input-user-password")).sendKeys("User1 password");
+
+        driver.findElement(By.id("admin-input-user-role")).clear();
+        driver.findElement(By.id("admin-input-user-role")).sendKeys("STUDENT");
+
+        driver.findElement(By.id("admin-btn-saveUser")).click();
+
     }
 
 
     public void addCourse(String url) {
         driver.get(Config.getInstance().getBaseUrl() + HASH_URL_PART + url);
-        driver.findElement(By.id("admin-btn-addCourse"));
+        driver.findElement(By.id("admin-btn-addCourse")).click();
+
+        driver.findElement(By.id("admin-input-course-name")).clear();
+        driver.findElement(By.id("admin-input-course-name")).sendKeys("Course1");
+
+        driver.findElement(By.id("admin-btn-saveCourse")).click();
     }
 
     public void viewAdminPanel(String url) {

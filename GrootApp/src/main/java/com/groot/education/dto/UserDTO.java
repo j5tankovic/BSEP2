@@ -1,21 +1,25 @@
 package com.groot.education.dto;
 
+import com.groot.education.model.Role;
+
 public class UserDTO {
 
     private long id;
     private String name;
     private String surname;
     private String username;
+    private Role role;
 
     public UserDTO() {
 
     }
 
-    public UserDTO(long id, String name, String surname, String username) {
+    public UserDTO(long id, String name, String surname, String username, Role role) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.username = username;
+        this.role = role;
     }
 
     public long getId() {
@@ -48,5 +52,13 @@ public class UserDTO {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

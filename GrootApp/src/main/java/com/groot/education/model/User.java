@@ -17,7 +17,7 @@ public class User {
     private long id;
 
     @NotNull
-    @Column(unique=true)
+    @Column(unique = true)
     private String username;
 
     @NotNull
@@ -42,13 +42,21 @@ public class User {
     @Enumerated(EnumType.STRING)
     private List<Permission> permissions = new ArrayList<>();
 
-    @ManyToMany(mappedBy="users")
+    @ManyToMany(mappedBy = "users")
     @JsonIgnore
     private List<Course> courses;
 
     @PrePersist
     public void generateToken() {
         this.token = UUID.randomUUID().toString();
+    }
+
+    @PreRemove
+    public void removeUserFromCourse() {
+        for (Course course: courses) {
+            course.getUsers().remove(this);
+        }
+        courses.clear();
     }
 
     @Override

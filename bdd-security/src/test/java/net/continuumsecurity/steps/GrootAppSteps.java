@@ -14,27 +14,24 @@ import net.continuumsecurity.proxy.LoggingProxy;
 import net.continuumsecurity.proxy.ZAProxyScanner;
 import net.continuumsecurity.web.Application;
 import org.apache.log4j.Logger;
-import org.hamcrest.beans.HasProperty;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.everyItem;
 import static org.hamcrest.Matchers.is;
 
 
-public class GrootAppStepsNew {
-    Logger log = Logger.getLogger(GrootAppStepsNew.class);
+public class GrootAppSteps {
+    Logger log = Logger.getLogger(GrootAppSteps.class);
     String actionName;
     String allowedUrl;
     String notAllowedUrl;
     Application app;
     LoggingProxy proxy;
 
-    public GrootAppStepsNew() {
+    public GrootAppSteps() {
     }
 
     @After
@@ -42,37 +39,45 @@ public class GrootAppStepsNew {
         ((ILogout) app).logout();
     }
 
-    @Given("^a new browser or client instance for grootAppNew$")
-    public void createGrootAppForAnyClient() {
-        createGrootApp();
-    }
-
-    public void createGrootApp() {
+    @Given("^a new intercepting proxy browser$")
+    public void initializeBrowserForApp() {
         app = Config.getInstance().createApp();
-        app.enableDefaultClient();
-        //simulates logout (erases content)
-        //app.getAuthTokenManager().deleteAuthTokens();
-        World.getInstance().setCredentials(new UserPassCredentials("", ""));
-    }
-
-    @Given("^configured instance for logging proxy$")
-    public void loggingClient() {
         app.enableHttpLoggingClient();
+        World.getInstance().setCredentials(new UserPassCredentials("", ""));
+//        createGrootApp();
     }
 
-    @When("^clear prx logs$")
-    public void clearProxyForGrootApp() {
-        getProxyGrootApp().clear();
+//    public void createGrootApp() {
+//        app = Config.getInstance().createApp();
+//        app.enableDefaultClient();
+//        //simulates logout (erases content)
+//        //app.getAuthTokenManager().deleteAuthTokens();
+//        World.getInstance().setCredentials(new UserPassCredentials("", ""));
+//    }
+
+//    @Given("^configured instance for logging proxy$")
+//    public void loggingClient() {
+//        app.enableHttpLoggingClient();
+//    }
+//
+//    @When("^clear prx logs$")
+//    public void clearProxyForGrootApp() {
+//        getProxyGrootApp().clear();
+//    }
+
+    @Given("^cleared proxy logs$")
+    public void clearProxyLogs() {
+        getProxy().clear();
     }
 
 
-    public LoggingProxy getProxyGrootApp() {
+    private LoggingProxy getProxy() {
         if (proxy == null)
             proxy = new ZAProxyScanner(Config.getInstance().getProxyHost(), Config.getInstance().getProxyPort(), Config.getInstance().getProxyApi());
         return proxy;
     }
 
-    @Given("^the login page for grootAppNew$")
+    @Given("^the login page$")
     public void openGrootAppLoginPage() {
         ((ILogin) app).openLoginPage();
     }
@@ -96,20 +101,25 @@ public class GrootAppStepsNew {
         World.getInstance().getUserPassCredentials().setPassword("password");
     }
 
-    @When("^mister login$")
+    @When("^user logs in$")
     public void loginWithCredentialsFromRoleForGrootApp() {
         assert World.getInstance().getCredentials() != null;
         ((ILogin) app).login(World.getInstance().getCredentials());
     }
 
-    @When("he goes to the allowed url (.*)$")
-    public void goToAllowedUrl(String allowedUrl) {
+    @When("user navigates to the allowed url (.*)$")
+    public void setAllowedUrl(String allowedUrl) {
         this.allowedUrl = allowedUrl;
     }
 
-    @When("he goes to the not allowed url (.*)$")
-    public void goToNotAllowedUrl(String notAllowedUrl) {
+    @When("user navigates to the not allowed url (.*)$")
+    public void setNotAllowedUrl(String notAllowedUrl) {
         this.notAllowedUrl = notAllowedUrl;
+    }
+
+    @When("^he performs action (.*)$")
+    public void setActionName(String action) {
+        this.actionName = action;
     }
 
 
@@ -125,7 +135,7 @@ public class GrootAppStepsNew {
             e.printStackTrace();
         }
         Thread.sleep(2000);
-        World.getInstance().getMethodProxyMap().put(actionName, getProxyGrootApp().getHistory());
+        World.getInstance().getMethodProxyMap().put(actionName, getProxy().getHistory());
         List<HarEntry> harEntries =  World.getInstance().getMethodProxyMap().get(actionName);
         boolean everyResponseIsOk = true;
         List<HarEntry> filteredEntries = excludeEntriesForBdicFiles(harEntries);
@@ -151,7 +161,7 @@ public class GrootAppStepsNew {
             e.printStackTrace();
         }
         Thread.sleep(2000);
-        World.getInstance().getMethodProxyMap().put(actionName, getProxyGrootApp().getHistory());
+        World.getInstance().getMethodProxyMap().put(actionName, getProxy().getHistory());
         List<HarEntry> harEntries =  World.getInstance().getMethodProxyMap().get(actionName);
         boolean responseWith403Exists = false;
         List<HarEntry> filteredEntries = excludeEntriesForBdicFiles(harEntries);
@@ -167,8 +177,8 @@ public class GrootAppStepsNew {
 
     private List<HarEntry> excludeEntriesForBdicFiles(List<HarEntry> harEntries) {
         List<HarEntry> filteredEntries = new ArrayList<>();
-        boolean isRedirectorUrl = false;
-        boolean is302ResponseStatus = false;
+        boolean isRedirectorUrl;
+        boolean is302ResponseStatus;
         for (HarEntry he: harEntries) {
             isRedirectorUrl = he.getRequest().getUrl().contains("https://redirector.gvt1.com");
             is302ResponseStatus = he.getResponse().getStatus() == 302;

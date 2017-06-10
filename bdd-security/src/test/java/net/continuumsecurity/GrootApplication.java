@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class GrootAnalyzerNew extends WebApplication implements ILogin, ILogout, INavigable {
+public class GrootApplication extends WebApplication implements ILogin, ILogout, INavigable {
 
     private final String HASH_URL_PART = "#!";
 

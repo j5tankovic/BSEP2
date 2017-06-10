@@ -6,7 +6,7 @@
 
     <!-- Base URL of the application to test -->
     <baseUrl>http://localhost:8080/</baseUrl>
-    <class>net.continuumsecurity.GrootAnalyzerNew</class>
+    <class>net.continuumsecurity.GrootApplication</class>
 
     <users>
         <user username="teacher" password="password"/>

@@ -19526,3 +19526,1264 @@ Caused by: org.hsqldb.HsqlException: connection exception: closed
 2017-06-10 22:25:47,072 [Thread-967] INFO  ENGINE - dataFileCache commit end
 2017-06-10 22:25:47,118 [Thread-967] INFO  ENGINE - Database closed
 2017-06-10 22:25:47,398 [Thread-967] INFO  CoreAPI - OWASP ZAP 2.5.0 terminated.
+2017-06-11 01:13:01,468 [main ] INFO  DaemonBootstrap - OWASP ZAP 2.5.0 started.
+2017-06-11 01:13:01,516 [main ] INFO  AbstractParam - Setting config api.key = zapapisecret was zapapisecret
+2017-06-11 01:13:01,518 [main ] INFO  AbstractParam - Setting config spider.thread = 10 was 10
+2017-06-11 01:13:01,521 [main ] INFO  AbstractParam - Setting config connection.proxyChain.hostName =  was 
+2017-06-11 01:13:01,521 [main ] INFO  AbstractParam - Setting config connection.proxyChain.port = 80 was 80
+2017-06-11 01:13:01,522 [main ] INFO  AbstractParam - Setting config scanner.threadPerHost = 20 was 20
+2017-06-11 01:13:01,522 [main ] INFO  AbstractParam - Setting config connection.proxyChain.enabled = true was false
+2017-06-11 01:13:01,529 [main ] INFO  SSLConnector - Reading supported SSL/TLS protocols...
+2017-06-11 01:13:01,529 [main ] INFO  SSLConnector - Using a SSLEngine...
+2017-06-11 01:13:01,753 [main ] INFO  SSLConnector - Done reading supported SSL/TLS protocols: [SSLv2Hello, SSLv3, TLSv1, TLSv1.1, TLSv1.2]
+2017-06-11 01:13:01,765 [main ] INFO  OptionsParamCertificate - Unsafe SSL renegotiation disabled.
+2017-06-11 01:13:02,168 [main ] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:02,336 [main ] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:02,345 [main ] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:02,430 [ZAP-daemon] INFO  ExtensionFactory - Loading extensions
+2017-06-11 01:13:04,778 [ZAP-daemon] INFO  ExtensionFactory - Extensions loaded
+2017-06-11 01:13:05,037 [ZAP-daemon] INFO  FilterFactory - loaded filter Change user agent to other browsers. 
+2017-06-11 01:13:05,038 [ZAP-daemon] INFO  FilterFactory - loaded filter Detect insecure or potentially malicious content in HTTP responses.
+2017-06-11 01:13:05,038 [ZAP-daemon] INFO  FilterFactory - loaded filter Detect and alert 'Set-cookie' attempt in HTTP response for modification.
+2017-06-11 01:13:05,038 [ZAP-daemon] INFO  FilterFactory - loaded filter Avoid browser cache (strip off IfModifiedSince)
+2017-06-11 01:13:05,038 [ZAP-daemon] INFO  FilterFactory - loaded filter Log cookies sent by browser.
+2017-06-11 01:13:05,039 [ZAP-daemon] INFO  FilterFactory - loaded filter Log unique GET queries into file:filter/get.xls
+2017-06-11 01:13:05,039 [ZAP-daemon] INFO  FilterFactory - loaded filter Log unique POST queries into file:  filter/post.xls
+2017-06-11 01:13:05,039 [ZAP-daemon] INFO  FilterFactory - loaded filter Log request and response into file: filter/message.txt
+2017-06-11 01:13:05,040 [ZAP-daemon] INFO  FilterFactory - loaded filter Replace HTTP request body using defined pattern.
+2017-06-11 01:13:05,040 [ZAP-daemon] INFO  FilterFactory - loaded filter Replace HTTP request header using defined pattern.
+2017-06-11 01:13:05,040 [ZAP-daemon] INFO  FilterFactory - loaded filter Replace HTTP response body using defined pattern.
+2017-06-11 01:13:05,040 [ZAP-daemon] INFO  FilterFactory - loaded filter Replace HTTP response header using defined pattern.
+2017-06-11 01:13:05,041 [ZAP-daemon] INFO  FilterFactory - loaded filter Send ZAP session request ID
+2017-06-11 01:13:05,243 [ZAP-daemon] INFO  ExtensionLoader - Initializing Allows ZAP to check for updates
+2017-06-11 01:13:05,248 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionViewOption
+2017-06-11 01:13:05,249 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionEdit
+2017-06-11 01:13:05,249 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionFilter
+2017-06-11 01:13:05,249 [ZAP-daemon] INFO  ExtensionLoader - Initializing Provides a rest based API for controlling and accessing ZAP
+2017-06-11 01:13:05,304 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionState
+2017-06-11 01:13:05,305 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionHistory
+2017-06-11 01:13:05,309 [ZAP-daemon] INFO  ExtensionLoader - Initializing Show hidden fields and enable disabled fields
+2017-06-11 01:13:05,310 [ZAP-daemon] INFO  ExtensionLoader - Initializing Search messages for strings and regular expressions 
+2017-06-11 01:13:05,310 [ZAP-daemon] INFO  ExtensionLoader - Initializing Encode/Decode/Hash...
+2017-06-11 01:13:05,311 [ZAP-daemon] INFO  ExtensionLoader - Initializing Allows you to intercept and modify requests and responses
+2017-06-11 01:13:05,311 [ZAP-daemon] INFO  ExtensionLoader - Initializing Passive scanner
+2017-06-11 01:13:05,449 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Script passive scan rules
+2017-06-11 01:13:05,449 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Stats Passive Scan Rule
+2017-06-11 01:13:05,449 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Application Error Disclosure
+2017-06-11 01:13:05,450 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Incomplete or No Cache-control and Pragma HTTP Header Set
+2017-06-11 01:13:05,450 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Content-Type Header Missing
+2017-06-11 01:13:05,450 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Cookie No HttpOnly Flag
+2017-06-11 01:13:05,450 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Cookie Without Secure Flag
+2017-06-11 01:13:05,451 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Cross-Domain JavaScript Source File Inclusion
+2017-06-11 01:13:05,451 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Web Browser XSS Protection Not Enabled
+2017-06-11 01:13:05,451 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Secure Pages Include Mixed Content
+2017-06-11 01:13:05,451 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Password Autocomplete in Browser
+2017-06-11 01:13:05,452 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Private IP Disclosure
+2017-06-11 01:13:05,452 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Session ID in URL Rewrite
+2017-06-11 01:13:05,454 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: X-Content-Type-Options Header Missing
+2017-06-11 01:13:05,454 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: X-Frame-Options Header Scanner
+2017-06-11 01:13:05,455 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Charset Mismatch
+2017-06-11 01:13:05,455 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Loosely Scoped Cookie
+2017-06-11 01:13:05,455 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Absence of Anti-CSRF Tokens
+2017-06-11 01:13:05,455 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Information Disclosure - Debug Error Messages
+2017-06-11 01:13:05,455 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Information Disclosure - Sensitive Informations in URL
+2017-06-11 01:13:05,455 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Information Disclosure - Sensitive Information in HTTP Referrer Header
+2017-06-11 01:13:05,455 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Information Disclosure - Suspicious Comments
+2017-06-11 01:13:05,456 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Weak Authentication Method
+2017-06-11 01:13:05,456 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Insecure JSF ViewState
+2017-06-11 01:13:05,456 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: HTTP Parameter Override
+2017-06-11 01:13:05,456 [ZAP-daemon] INFO  ExtensionPassiveScan - loaded passive scan rule: Viewstate Scanner
+2017-06-11 01:13:05,479 [ZAP-daemon] INFO  ExtensionLoader - Initializing Allows you to view and manage alerts
+2017-06-11 01:13:05,479 [ZAP-daemon] INFO  ExtensionLoader - Initializing Active scanner, heavily based on the original Paros active scanner, but with additional tests added
+2017-06-11 01:13:05,494 [ZAP-daemon] INFO  ExtensionLoader - Initializing Spider used for automatically finding URIs on a site
+2017-06-11 01:13:05,505 [ZAP-daemon] INFO  ExtensionLoader - Initializing A set of common popup menus for miscellaneous tasks
+2017-06-11 01:13:05,505 [ZAP-daemon] INFO  ExtensionLoader - Initializing Forced browsing of files and directories using code from the OWASP DirBuster tool
+2017-06-11 01:13:05,506 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionManualRequest
+2017-06-11 01:13:05,506 [ZAP-daemon] INFO  ExtensionLoader - Initializing Compares 2 sessions and generates an HTML file showing the differences
+2017-06-11 01:13:05,507 [ZAP-daemon] INFO  ExtensionLoader - Initializing Invoke external applications passing context related information such as URLs and parameters
+2017-06-11 01:13:05,507 [ZAP-daemon] INFO  ExtensionLoader - Initializing Handles anti cross site request forgery (CSRF) tokens
+2017-06-11 01:13:05,510 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionAuthentication
+2017-06-11 01:13:06,392 [ZAP-daemon] INFO  ExtensionAuthentication - Loaded authentication method types: [Form-based Authentication, HTTP/NTLM Authentication, Manual Authentication, Script-based Authentication]
+2017-06-11 01:13:06,394 [ZAP-daemon] INFO  ExtensionLoader - Initializing Creates a dynamic SSL certificate to allow SSL communications to be intercepted without warnings being generated by the browser
+2017-06-11 01:13:06,421 [ZAP-daemon] INFO  ExtensionLoader - Initializing Logs errors to the Output tab in development mode only
+2017-06-11 01:13:06,422 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionUserManagement
+2017-06-11 01:13:06,423 [ZAP-daemon] INFO  ExtensionLoader - Initializing Summarise and analyse FORM and URL parameters as well as cookies
+2017-06-11 01:13:06,423 [ZAP-daemon] INFO  ExtensionLoader - Initializing Script integration
+2017-06-11 01:13:06,436 [ZAP-daemon] INFO  ExtensionLoader - Initializing Scripting console, supports all JSR 223 scripting languages
+2017-06-11 01:13:06,436 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionForcedUser
+2017-06-11 01:13:06,436 [ZAP-daemon] INFO  ExtensionLoader - Initializing Extension handling HTTP sessions
+2017-06-11 01:13:06,438 [ZAP-daemon] INFO  ExtensionLoader - Initializing Zest is a specialized scripting language from Mozilla specifically designed to be used in security tools
+2017-06-11 01:13:07,053 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionDiff
+2017-06-11 01:13:07,054 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionRequestPostTableView
+2017-06-11 01:13:07,054 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionSessionManagement
+2017-06-11 01:13:07,380 [ZAP-daemon] INFO  ExtensionSessionManagement - Loaded session management method types: [Cookie-based Session Management, HTTP Authentication Session Management]
+2017-06-11 01:13:07,382 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionHttpPanelRequestFormTableView
+2017-06-11 01:13:07,383 [ZAP-daemon] INFO  ExtensionLoader - Initializing Capture messages from WebSockets with the ability to set breakpoints.
+2017-06-11 01:13:07,399 [ZAP-daemon] INFO  ExtensionLoader - Initializing Summarise and analyse FORM and URL parameters as well as cookies
+2017-06-11 01:13:07,399 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionAuthorization
+2017-06-11 01:13:07,401 [ZAP-daemon] INFO  ExtensionLoader - Initializing AJAX Spider, uses Crawljax
+2017-06-11 01:13:07,404 [ZAP-daemon] INFO  ExtensionLoader - Initializing Handles adding Global Excluded URLs
+2017-06-11 01:13:07,405 [ZAP-daemon] INFO  ExtensionLoader - Initializing Adds menu item to refresh the Sites tree
+2017-06-11 01:13:07,405 [ZAP-daemon] INFO  ExtensionLoader - Initializing Adds support for configurable keyboard shortcuts for all of the ZAP menus.
+2017-06-11 01:13:07,406 [ZAP-daemon] INFO  ExtensionLoader - Initializing OWASP ZAP User Guide
+2017-06-11 01:13:07,406 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionReport
+2017-06-11 01:13:07,407 [ZAP-daemon] INFO  ExtensionLoader - Initializing Allows you to configure which extensions are loaded when ZAP starts 
+2017-06-11 01:13:07,407 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionHttpPanelComponentonentAll
+2017-06-11 01:13:07,407 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionHttpPanelHexView
+2017-06-11 01:13:07,407 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionHttpPanelImageView
+2017-06-11 01:13:07,408 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionHttpPanelLargeRequestView
+2017-06-11 01:13:07,408 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionHttpPanelLargeResponseView
+2017-06-11 01:13:07,409 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionHttpPanelRequestQueryCookieTableView
+2017-06-11 01:13:07,409 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionHttpPanelSyntaxHighlightTextView
+2017-06-11 01:13:07,409 [ZAP-daemon] INFO  ExtensionLoader - Initializing Statistics
+2017-06-11 01:13:07,410 [ZAP-daemon] INFO  ExtensionStats - Start recording in memory stats
+2017-06-11 01:13:07,412 [ZAP-daemon] INFO  ExtensionLoader - Initializing Context alert rules filter
+2017-06-11 01:13:07,413 [ZAP-daemon] INFO  ExtensionLoader - Initializing Active Scan Rules
+2017-06-11 01:13:07,414 [ZAP-daemon] INFO  ExtensionLoader - Initializing Active Scan Rules - alpha
+2017-06-11 01:13:07,415 [ZAP-daemon] INFO  ExtensionLoader - Initializing Active Scan Rules - beta
+2017-06-11 01:13:07,417 [ZAP-daemon] INFO  ExtensionLoader - Initializing Translations of the core language files
+2017-06-11 01:13:07,417 [ZAP-daemon] INFO  ExtensionLoader - Initializing Provides the foundation for concrete message types (for example, HTTP, WebSockets) expose fuzzer implementations.
+2017-06-11 01:13:07,419 [ZAP-daemon] INFO  ExtensionLoader - Initializing Allows to fuzz HTTP messages.
+2017-06-11 01:13:07,420 [ZAP-daemon] INFO  ExtensionLoader - Initializing The ZAP Getting Started Guide
+2017-06-11 01:13:07,420 [ZAP-daemon] INFO  ExtensionLoader - Initializing The Online menu links
+2017-06-11 01:13:07,420 [ZAP-daemon] INFO  ExtensionLoader - Initializing Passive Scan Rules
+2017-06-11 01:13:07,421 [ZAP-daemon] INFO  ExtensionLoader - Initializing Passive Scan Rules - beta
+2017-06-11 01:13:07,421 [ZAP-daemon] INFO  ExtensionLoader - Initializing Quick Start panel 
+2017-06-11 01:13:07,423 [ZAP-daemon] INFO  ExtensionLoader - Initializing ExtensionSaveRawHttpMessage
+2017-06-11 01:13:07,423 [ZAP-daemon] INFO  ExtensionLoader - Initializing Provides WebDrivers to control several browsers using Selenium and includes HtmlUnit browser.
+2017-06-11 01:13:07,424 [ZAP-daemon] INFO  ExtensionLoader - Initializing Tips and Tricks
+2017-06-11 01:13:07,427 [ZAP-daemon] INFO  ExtensionLoader - Initializing Allows to fuzz WebSocket messages.
+2017-06-11 01:13:07,431 [ZAP-daemon] WARN  ExtensionAutoUpdate - This ZAP installation is over a year old - its probably very out of date
+2017-06-11 01:13:07,886 [ZAP-daemon] INFO  DaemonBootstrap - ZAP is now listening on 127.0.0.1:52035
+2017-06-11 01:13:10,173 [ZAP-ProxyThread-4] INFO  Control - Discard Session
+2017-06-11 01:13:10,506 [ZAP-ProxyThread-4] INFO  Control - New Session
+2017-06-11 01:13:10,509 [ZAP-ProxyThread-4] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:10,539 [ZAP-ProxyThread-4] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:10,541 [ZAP-ProxyThread-4] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:10,593 [ZAP-ProxyThread-4] INFO  ENGINE - Database closed
+2017-06-11 01:13:11,015 [ZAP-ProxyThread-4] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:11,240 [ZAP-ProxyThread-4] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:11,250 [ZAP-ProxyThread-4] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:13,555 [ZAP-ProxyThread-7] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:13:14,696 [ZAP-ProxyThread-15] INFO  Control - Discard Session
+2017-06-11 01:13:14,699 [ZAP-ProxyThread-15] INFO  Control - New Session
+2017-06-11 01:13:14,700 [ZAP-ProxyThread-15] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:14,763 [ZAP-ProxyThread-15] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:14,802 [ZAP-ProxyThread-15] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:14,836 [Thread-41] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:14,865 [Thread-42] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:14,884 [Thread-43] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:14,912 [ZAP-ProxyThread-15] INFO  ENGINE - Database closed
+2017-06-11 01:13:14,944 [Thread-44] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:14,961 [Thread-45] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:15,031 [Thread-46] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:15,410 [ZAP-ProxyThread-15] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:15,602 [ZAP-ProxyThread-15] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:15,679 [ZAP-ProxyThread-15] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:19,950 [ZAP-ProxyThread-31] INFO  Control - Discard Session
+2017-06-11 01:13:19,952 [ZAP-ProxyThread-31] INFO  Control - New Session
+2017-06-11 01:13:19,953 [ZAP-ProxyThread-31] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:19,969 [ZAP-ProxyThread-31] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:19,971 [ZAP-ProxyThread-31] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:20,002 [ZAP-ProxyThread-31] INFO  ENGINE - Database closed
+2017-06-11 01:13:20,148 [ZAP-ProxyThread-31] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:20,209 [ZAP-ProxyThread-31] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:20,217 [ZAP-ProxyThread-31] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:20,644 [ZAP-ProxyThread-35] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:13:21,882 [ZAP-ProxyThread-38] INFO  Control - Discard Session
+2017-06-11 01:13:21,919 [ZAP-ProxyThread-38] INFO  Control - New Session
+2017-06-11 01:13:21,922 [ZAP-ProxyThread-38] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:21,935 [Thread-91] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:21,979 [ZAP-ProxyThread-38] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:22,004 [ZAP-ProxyThread-38] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:22,054 [ZAP-ProxyThread-38] INFO  ENGINE - Database closed
+2017-06-11 01:13:22,199 [ZAP-ProxyThread-38] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:22,284 [ZAP-ProxyThread-38] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:22,295 [ZAP-ProxyThread-38] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:25,514 [ZAP-ProxyThread-50] INFO  Control - Discard Session
+2017-06-11 01:13:25,516 [ZAP-ProxyThread-50] INFO  Control - New Session
+2017-06-11 01:13:25,517 [ZAP-ProxyThread-50] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:25,540 [ZAP-ProxyThread-50] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:25,546 [ZAP-ProxyThread-50] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:25,578 [ZAP-ProxyThread-50] INFO  ENGINE - Database closed
+2017-06-11 01:13:25,732 [ZAP-ProxyThread-50] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:25,797 [ZAP-ProxyThread-50] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:25,803 [ZAP-ProxyThread-50] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:26,040 [ZAP-ProxyThread-54] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:13:27,471 [ZAP-ProxyThread-57] INFO  Control - Discard Session
+2017-06-11 01:13:27,479 [ZAP-ProxyThread-57] INFO  Control - New Session
+2017-06-11 01:13:27,479 [ZAP-ProxyThread-57] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:27,534 [ZAP-ProxyThread-57] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:27,569 [ZAP-ProxyThread-57] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:27,666 [ZAP-ProxyThread-57] INFO  ENGINE - Database closed
+2017-06-11 01:13:27,802 [ZAP-ProxyThread-57] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:27,859 [ZAP-ProxyThread-57] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:27,866 [ZAP-ProxyThread-57] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:31,084 [ZAP-ProxyThread-67] INFO  Control - Discard Session
+2017-06-11 01:13:31,089 [ZAP-ProxyThread-67] INFO  Control - New Session
+2017-06-11 01:13:31,089 [ZAP-ProxyThread-67] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:31,113 [ZAP-ProxyThread-67] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:31,116 [ZAP-ProxyThread-67] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:31,147 [ZAP-ProxyThread-67] INFO  ENGINE - Database closed
+2017-06-11 01:13:31,288 [ZAP-ProxyThread-67] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:31,342 [ZAP-ProxyThread-67] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:31,346 [ZAP-ProxyThread-67] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:31,782 [ZAP-ProxyThread-74] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:13:33,067 [ZAP-ProxyThread-77] INFO  Control - Discard Session
+2017-06-11 01:13:33,080 [ZAP-ProxyThread-77] INFO  Control - New Session
+2017-06-11 01:13:33,081 [ZAP-ProxyThread-77] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:33,097 [Thread-188] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:33,136 [ZAP-ProxyThread-77] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:33,158 [ZAP-ProxyThread-77] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:33,199 [ZAP-ProxyThread-77] INFO  ENGINE - Database closed
+2017-06-11 01:13:33,346 [ZAP-ProxyThread-77] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:33,392 [ZAP-ProxyThread-77] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:33,396 [ZAP-ProxyThread-77] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:35,834 [ZAP-ProxyThread-85] INFO  Control - Discard Session
+2017-06-11 01:13:35,839 [ZAP-ProxyThread-85] INFO  Control - New Session
+2017-06-11 01:13:35,840 [ZAP-ProxyThread-85] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:35,870 [ZAP-ProxyThread-85] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:35,873 [ZAP-ProxyThread-85] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:35,902 [ZAP-ProxyThread-85] INFO  ENGINE - Database closed
+2017-06-11 01:13:36,040 [ZAP-ProxyThread-85] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:36,091 [ZAP-ProxyThread-85] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:36,098 [ZAP-ProxyThread-85] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:36,526 [ZAP-ProxyThread-89] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:13:37,796 [ZAP-ProxyThread-92] INFO  Control - Discard Session
+2017-06-11 01:13:37,807 [ZAP-ProxyThread-92] INFO  Control - New Session
+2017-06-11 01:13:37,808 [ZAP-ProxyThread-92] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:37,844 [ZAP-ProxyThread-92] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:37,865 [ZAP-ProxyThread-92] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:37,905 [ZAP-ProxyThread-92] INFO  ENGINE - Database closed
+2017-06-11 01:13:38,039 [ZAP-ProxyThread-92] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:38,087 [ZAP-ProxyThread-92] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:38,094 [ZAP-ProxyThread-92] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:40,972 [ZAP-ProxyThread-101] INFO  Control - Discard Session
+2017-06-11 01:13:40,974 [ZAP-ProxyThread-101] INFO  Control - New Session
+2017-06-11 01:13:40,974 [ZAP-ProxyThread-101] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:41,003 [ZAP-ProxyThread-101] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:41,009 [ZAP-ProxyThread-101] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:41,041 [ZAP-ProxyThread-101] INFO  ENGINE - Database closed
+2017-06-11 01:13:41,168 [ZAP-ProxyThread-101] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:41,209 [ZAP-ProxyThread-101] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:41,219 [ZAP-ProxyThread-101] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:41,688 [ZAP-ProxyThread-108] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:13:43,079 [ZAP-ProxyThread-111] INFO  Control - Discard Session
+2017-06-11 01:13:43,091 [ZAP-ProxyThread-111] INFO  Control - New Session
+2017-06-11 01:13:43,092 [ZAP-ProxyThread-111] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:43,140 [ZAP-ProxyThread-111] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:43,172 [ZAP-ProxyThread-111] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:43,229 [ZAP-ProxyThread-111] INFO  ENGINE - Database closed
+2017-06-11 01:13:43,385 [ZAP-ProxyThread-111] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:43,447 [ZAP-ProxyThread-111] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:43,455 [ZAP-ProxyThread-111] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:47,155 [ZAP-ProxyThread-119] INFO  Control - Discard Session
+2017-06-11 01:13:47,157 [ZAP-ProxyThread-119] INFO  Control - New Session
+2017-06-11 01:13:47,158 [ZAP-ProxyThread-119] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:47,183 [ZAP-ProxyThread-119] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:47,185 [ZAP-ProxyThread-119] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:47,211 [ZAP-ProxyThread-119] INFO  ENGINE - Database closed
+2017-06-11 01:13:47,345 [ZAP-ProxyThread-119] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:47,386 [ZAP-ProxyThread-119] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:47,390 [ZAP-ProxyThread-119] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:47,856 [ZAP-ProxyThread-124] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:13:49,143 [ZAP-ProxyThread-128] INFO  Control - Discard Session
+2017-06-11 01:13:49,152 [ZAP-ProxyThread-128] INFO  Control - New Session
+2017-06-11 01:13:49,153 [ZAP-ProxyThread-128] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:49,186 [Thread-324] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:49,193 [Thread-325] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:49,207 [ZAP-ProxyThread-128] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:49,235 [ZAP-ProxyThread-128] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:49,306 [Thread-327] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:49,307 [Thread-326] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:49,306 [Thread-328] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:49,380 [ZAP-ProxyThread-128] INFO  ENGINE - Database closed
+2017-06-11 01:13:49,513 [ZAP-ProxyThread-128] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:49,548 [ZAP-ProxyThread-128] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:49,552 [ZAP-ProxyThread-128] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:52,057 [ZAP-ProxyThread-141] INFO  Control - Discard Session
+2017-06-11 01:13:52,060 [ZAP-ProxyThread-141] INFO  Control - New Session
+2017-06-11 01:13:52,060 [ZAP-ProxyThread-141] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:52,083 [ZAP-ProxyThread-141] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:52,086 [ZAP-ProxyThread-141] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:52,116 [ZAP-ProxyThread-141] INFO  ENGINE - Database closed
+2017-06-11 01:13:52,257 [ZAP-ProxyThread-141] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:52,310 [ZAP-ProxyThread-141] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:52,315 [ZAP-ProxyThread-141] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:52,517 [ZAP-ProxyThread-146] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:13:53,675 [ZAP-ProxyThread-149] INFO  Control - Discard Session
+2017-06-11 01:13:53,804 [ZAP-ProxyThread-149] INFO  Control - New Session
+2017-06-11 01:13:53,805 [ZAP-ProxyThread-149] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:53,937 [Thread-374] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:53,937 [Thread-376] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:53,937 [Thread-375] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:13:54,032 [ZAP-ProxyThread-149] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:54,084 [ZAP-ProxyThread-149] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:54,125 [ZAP-ProxyThread-149] INFO  ENGINE - Database closed
+2017-06-11 01:13:54,264 [ZAP-ProxyThread-149] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:54,331 [ZAP-ProxyThread-149] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:54,335 [ZAP-ProxyThread-149] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:13:57,188 [ZAP-ProxyThread-157] INFO  Control - Discard Session
+2017-06-11 01:13:57,192 [ZAP-ProxyThread-157] INFO  Control - New Session
+2017-06-11 01:13:57,192 [ZAP-ProxyThread-157] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:13:57,229 [ZAP-ProxyThread-157] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:13:57,233 [ZAP-ProxyThread-157] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:13:57,268 [ZAP-ProxyThread-157] INFO  ENGINE - Database closed
+2017-06-11 01:13:57,402 [ZAP-ProxyThread-157] INFO  ENGINE - open start - state not modified
+2017-06-11 01:13:57,448 [ZAP-ProxyThread-157] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:13:57,452 [ZAP-ProxyThread-157] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:00,770 [ZAP-ProxyThread-162] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:01,484 [ZAP-ProxyThread-166] INFO  Control - Discard Session
+2017-06-11 01:14:01,488 [ZAP-ProxyThread-166] INFO  Control - New Session
+2017-06-11 01:14:01,488 [ZAP-ProxyThread-166] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:01,494 [Thread-419] ERROR SiteMap - Exception adding http://localhost:8080/api/auth/login null
+java.lang.NullPointerException
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.model.SiteMap.createReference(Unknown Source)
+	at org.parosproxy.paros.model.SiteMap.findAndAddChild(Unknown Source)
+	at org.parosproxy.paros.model.SiteMap.addPath(Unknown Source)
+	at org.zaproxy.zap.model.SessionStructure.addPath(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.addToSiteMap(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-11 01:14:01,513 [Thread-420] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:01,528 [Thread-421] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:01,545 [ZAP-ProxyThread-166] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:01,612 [Thread-424] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:01,613 [Thread-423] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:01,615 [Thread-422] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:01,615 [ZAP-ProxyThread-166] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:01,689 [ZAP-ProxyThread-166] INFO  ENGINE - Database closed
+2017-06-11 01:14:01,846 [ZAP-ProxyThread-166] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:01,903 [ZAP-ProxyThread-166] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:01,912 [ZAP-ProxyThread-166] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:04,685 [ZAP-ProxyThread-179] INFO  Control - Discard Session
+2017-06-11 01:14:04,687 [ZAP-ProxyThread-179] INFO  Control - New Session
+2017-06-11 01:14:04,687 [ZAP-ProxyThread-179] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:04,711 [ZAP-ProxyThread-179] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:04,715 [ZAP-ProxyThread-179] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:04,757 [ZAP-ProxyThread-179] INFO  ENGINE - Database closed
+2017-06-11 01:14:04,900 [ZAP-ProxyThread-179] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:04,945 [ZAP-ProxyThread-179] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:04,951 [ZAP-ProxyThread-179] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:05,728 [ZAP-ProxyThread-184] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:06,384 [ZAP-ProxyThread-187] INFO  Control - Discard Session
+2017-06-11 01:14:06,393 [ZAP-ProxyThread-187] INFO  Control - New Session
+2017-06-11 01:14:06,394 [ZAP-ProxyThread-187] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:06,402 [Thread-468] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableTag.getTagsForHistoryID(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeQuery(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 9 more
+2017-06-11 01:14:06,419 [Thread-469] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:06,432 [ZAP-ProxyThread-187] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:06,454 [Thread-470] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:06,474 [Thread-471] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:06,478 [ZAP-ProxyThread-187] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:06,501 [Thread-472] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:06,563 [ZAP-ProxyThread-187] INFO  ENGINE - Database closed
+2017-06-11 01:14:06,697 [ZAP-ProxyThread-187] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:06,759 [ZAP-ProxyThread-187] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:06,766 [ZAP-ProxyThread-187] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:10,320 [ZAP-ProxyThread-195] INFO  Control - Discard Session
+2017-06-11 01:14:10,322 [ZAP-ProxyThread-195] INFO  Control - New Session
+2017-06-11 01:14:10,323 [ZAP-ProxyThread-195] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:10,352 [ZAP-ProxyThread-195] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:10,356 [ZAP-ProxyThread-195] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:10,404 [ZAP-ProxyThread-195] INFO  ENGINE - Database closed
+2017-06-11 01:14:10,535 [ZAP-ProxyThread-195] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:10,573 [ZAP-ProxyThread-195] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:10,577 [ZAP-ProxyThread-195] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:11,556 [ZAP-ProxyThread-202] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:12,535 [ZAP-ProxyThread-205] INFO  Control - Discard Session
+2017-06-11 01:14:12,541 [ZAP-ProxyThread-205] INFO  Control - New Session
+2017-06-11 01:14:12,541 [ZAP-ProxyThread-205] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:12,544 [Thread-516] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableTag.getTagsForHistoryID(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeQuery(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 9 more
+2017-06-11 01:14:12,558 [Thread-517] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:12,583 [Thread-518] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:12,592 [ZAP-ProxyThread-205] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:12,618 [Thread-519] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:12,635 [ZAP-ProxyThread-205] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:12,639 [Thread-520] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:12,674 [Thread-521] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:12,733 [ZAP-ProxyThread-205] INFO  ENGINE - Database closed
+2017-06-11 01:14:12,869 [ZAP-ProxyThread-205] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:12,909 [ZAP-ProxyThread-205] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:12,913 [ZAP-ProxyThread-205] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:15,350 [ZAP-ProxyThread-213] INFO  Control - Discard Session
+2017-06-11 01:14:15,354 [ZAP-ProxyThread-213] INFO  Control - New Session
+2017-06-11 01:14:15,354 [ZAP-ProxyThread-213] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:15,372 [ZAP-ProxyThread-213] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:15,374 [ZAP-ProxyThread-213] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:15,402 [ZAP-ProxyThread-213] INFO  ENGINE - Database closed
+2017-06-11 01:14:15,553 [ZAP-ProxyThread-213] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:15,593 [ZAP-ProxyThread-213] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:15,599 [ZAP-ProxyThread-213] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:16,024 [ZAP-ProxyThread-218] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:17,290 [ZAP-ProxyThread-222] INFO  Control - Discard Session
+2017-06-11 01:14:17,295 [ZAP-ProxyThread-222] INFO  Control - New Session
+2017-06-11 01:14:17,295 [ZAP-ProxyThread-222] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:17,340 [ZAP-ProxyThread-222] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:17,364 [ZAP-ProxyThread-222] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:17,404 [ZAP-ProxyThread-222] INFO  ENGINE - Database closed
+2017-06-11 01:14:17,536 [ZAP-ProxyThread-222] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:17,580 [ZAP-ProxyThread-222] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:17,585 [ZAP-ProxyThread-222] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:20,245 [ZAP-ProxyThread-230] INFO  Control - Discard Session
+2017-06-11 01:14:20,247 [ZAP-ProxyThread-230] INFO  Control - New Session
+2017-06-11 01:14:20,247 [ZAP-ProxyThread-230] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:20,267 [ZAP-ProxyThread-230] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:20,271 [ZAP-ProxyThread-230] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:20,309 [ZAP-ProxyThread-230] INFO  ENGINE - Database closed
+2017-06-11 01:14:20,448 [ZAP-ProxyThread-230] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:20,493 [ZAP-ProxyThread-230] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:20,501 [ZAP-ProxyThread-230] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:20,878 [ZAP-ProxyThread-236] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:22,226 [ZAP-ProxyThread-240] INFO  Control - Discard Session
+2017-06-11 01:14:22,247 [ZAP-ProxyThread-240] INFO  Control - New Session
+2017-06-11 01:14:22,247 [ZAP-ProxyThread-240] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:22,303 [ZAP-ProxyThread-240] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:22,329 [ZAP-ProxyThread-240] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:22,372 [ZAP-ProxyThread-240] INFO  ENGINE - Database closed
+2017-06-11 01:14:22,503 [ZAP-ProxyThread-240] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:22,552 [ZAP-ProxyThread-240] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:22,560 [ZAP-ProxyThread-240] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:25,080 [ZAP-ProxyThread-248] INFO  Control - Discard Session
+2017-06-11 01:14:25,082 [ZAP-ProxyThread-248] INFO  Control - New Session
+2017-06-11 01:14:25,082 [ZAP-ProxyThread-248] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:25,102 [ZAP-ProxyThread-248] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:25,106 [ZAP-ProxyThread-248] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:25,145 [ZAP-ProxyThread-248] INFO  ENGINE - Database closed
+2017-06-11 01:14:25,288 [ZAP-ProxyThread-248] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:25,334 [ZAP-ProxyThread-248] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:25,338 [ZAP-ProxyThread-248] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:25,764 [ZAP-ProxyThread-253] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:27,020 [ZAP-ProxyThread-257] INFO  Control - Discard Session
+2017-06-11 01:14:27,024 [ZAP-ProxyThread-257] INFO  Control - New Session
+2017-06-11 01:14:27,024 [ZAP-ProxyThread-257] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:27,027 [Thread-668] ERROR SiteMap - Exception adding http://localhost:8080/api/users/1/courses java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableAlert.getAlertsBySourceHistoryId(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.model.SiteMap.createReference(Unknown Source)
+	at org.parosproxy.paros.model.SiteMap.findAndAddChild(Unknown Source)
+	at org.parosproxy.paros.model.SiteMap.addPath(Unknown Source)
+	at org.zaproxy.zap.model.SessionStructure.addPath(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.addToSiteMap(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeQuery(Unknown Source)
+	... 11 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 13 more
+2017-06-11 01:14:27,062 [ZAP-ProxyThread-257] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:27,089 [ZAP-ProxyThread-257] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:27,129 [ZAP-ProxyThread-257] INFO  ENGINE - Database closed
+2017-06-11 01:14:27,258 [ZAP-ProxyThread-257] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:27,295 [ZAP-ProxyThread-257] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:27,302 [ZAP-ProxyThread-257] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:30,388 [ZAP-ProxyThread-265] INFO  Control - Discard Session
+2017-06-11 01:14:30,390 [ZAP-ProxyThread-265] INFO  Control - New Session
+2017-06-11 01:14:30,390 [ZAP-ProxyThread-265] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:30,409 [ZAP-ProxyThread-265] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:30,411 [ZAP-ProxyThread-265] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:30,440 [ZAP-ProxyThread-265] INFO  ENGINE - Database closed
+2017-06-11 01:14:30,562 [ZAP-ProxyThread-265] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:30,596 [ZAP-ProxyThread-265] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:30,604 [ZAP-ProxyThread-265] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:31,157 [ZAP-ProxyThread-268] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:32,343 [ZAP-ProxyThread-272] INFO  Control - Discard Session
+2017-06-11 01:14:32,350 [ZAP-ProxyThread-272] INFO  Control - New Session
+2017-06-11 01:14:32,350 [ZAP-ProxyThread-272] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:32,364 [Thread-714] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:32,387 [Thread-715] WARN  ProxyListenerLog - java.sql.SQLNonTransientConnectionException: connection exception: closed
+org.parosproxy.paros.db.DatabaseException: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	at org.parosproxy.paros.model.HistoryReference.<init>(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createHistoryReference(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.createAndAddMessage(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog.access$000(Unknown Source)
+	at org.parosproxy.paros.extension.history.ProxyListenerLog$1.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLNonTransientConnectionException: connection exception: closed
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCPreparedStatement.executeUpdate(Unknown Source)
+	at org.parosproxy.paros.db.paros.ParosTableHistory.write(Unknown Source)
+	... 7 more
+Caused by: org.hsqldb.HsqlException: connection exception: closed
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 10 more
+2017-06-11 01:14:32,393 [ZAP-ProxyThread-272] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:32,414 [ZAP-ProxyThread-272] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:32,483 [ZAP-ProxyThread-272] INFO  ENGINE - Database closed
+2017-06-11 01:14:32,625 [ZAP-ProxyThread-272] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:32,657 [ZAP-ProxyThread-272] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:32,667 [ZAP-ProxyThread-272] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:35,719 [ZAP-ProxyThread-280] INFO  Control - Discard Session
+2017-06-11 01:14:35,720 [ZAP-ProxyThread-280] INFO  Control - New Session
+2017-06-11 01:14:35,720 [ZAP-ProxyThread-280] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:35,744 [ZAP-ProxyThread-280] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:35,746 [ZAP-ProxyThread-280] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:35,775 [ZAP-ProxyThread-280] INFO  ENGINE - Database closed
+2017-06-11 01:14:35,911 [ZAP-ProxyThread-280] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:35,943 [ZAP-ProxyThread-280] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:35,948 [ZAP-ProxyThread-280] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:36,400 [ZAP-ProxyThread-283] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:37,682 [ZAP-ProxyThread-287] INFO  Control - Discard Session
+2017-06-11 01:14:37,709 [ZAP-ProxyThread-287] INFO  Control - New Session
+2017-06-11 01:14:37,709 [ZAP-ProxyThread-287] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:37,738 [ZAP-ProxyThread-287] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:37,763 [ZAP-ProxyThread-287] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:37,805 [ZAP-ProxyThread-287] INFO  ENGINE - Database closed
+2017-06-11 01:14:37,933 [ZAP-ProxyThread-287] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:37,969 [ZAP-ProxyThread-287] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:37,973 [ZAP-ProxyThread-287] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:40,373 [ZAP-ProxyThread-295] INFO  Control - Discard Session
+2017-06-11 01:14:40,375 [ZAP-ProxyThread-295] INFO  Control - New Session
+2017-06-11 01:14:40,376 [ZAP-ProxyThread-295] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:40,399 [ZAP-ProxyThread-295] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:40,402 [ZAP-ProxyThread-295] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:40,431 [ZAP-ProxyThread-295] INFO  ENGINE - Database closed
+2017-06-11 01:14:40,569 [ZAP-ProxyThread-295] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:40,606 [ZAP-ProxyThread-295] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:40,614 [ZAP-ProxyThread-295] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:40,949 [ZAP-ProxyThread-298] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:42,147 [ZAP-ProxyThread-302] INFO  Control - Discard Session
+2017-06-11 01:14:42,173 [ZAP-ProxyThread-302] INFO  Control - New Session
+2017-06-11 01:14:42,174 [ZAP-ProxyThread-302] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:42,251 [ZAP-ProxyThread-302] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:42,272 [ZAP-ProxyThread-302] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:42,316 [ZAP-ProxyThread-302] INFO  ENGINE - Database closed
+2017-06-11 01:14:42,452 [ZAP-ProxyThread-302] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:42,490 [ZAP-ProxyThread-302] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:42,494 [ZAP-ProxyThread-302] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:45,991 [ZAP-ProxyThread-310] INFO  Control - Discard Session
+2017-06-11 01:14:45,993 [ZAP-ProxyThread-310] INFO  Control - New Session
+2017-06-11 01:14:45,993 [ZAP-ProxyThread-310] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:46,025 [ZAP-ProxyThread-310] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:46,029 [ZAP-ProxyThread-310] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:46,078 [ZAP-ProxyThread-310] INFO  ENGINE - Database closed
+2017-06-11 01:14:46,205 [ZAP-ProxyThread-310] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:46,262 [ZAP-ProxyThread-310] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:46,271 [ZAP-ProxyThread-310] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:46,715 [ZAP-ProxyThread-316] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:47,975 [ZAP-ProxyThread-319] INFO  Control - Discard Session
+2017-06-11 01:14:47,988 [ZAP-ProxyThread-319] INFO  Control - New Session
+2017-06-11 01:14:47,989 [ZAP-ProxyThread-319] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:48,062 [ZAP-ProxyThread-319] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:48,091 [ZAP-ProxyThread-319] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:48,144 [ZAP-ProxyThread-319] INFO  ENGINE - Database closed
+2017-06-11 01:14:48,293 [ZAP-ProxyThread-319] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:48,398 [ZAP-ProxyThread-319] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:48,407 [ZAP-ProxyThread-319] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:50,850 [ZAP-ProxyThread-327] INFO  Control - Discard Session
+2017-06-11 01:14:50,852 [ZAP-ProxyThread-327] INFO  Control - New Session
+2017-06-11 01:14:50,852 [ZAP-ProxyThread-327] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:50,870 [ZAP-ProxyThread-327] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:50,873 [ZAP-ProxyThread-327] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:50,904 [ZAP-ProxyThread-327] INFO  ENGINE - Database closed
+2017-06-11 01:14:51,035 [ZAP-ProxyThread-327] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:51,063 [ZAP-ProxyThread-327] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:51,067 [ZAP-ProxyThread-327] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:51,434 [ZAP-ProxyThread-332] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:52,466 [ZAP-ProxyThread-336] INFO  Control - Discard Session
+2017-06-11 01:14:52,515 [ZAP-ProxyThread-336] INFO  Control - New Session
+2017-06-11 01:14:52,515 [ZAP-ProxyThread-336] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:52,650 [ZAP-ProxyThread-336] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:52,676 [ZAP-ProxyThread-336] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:52,723 [ZAP-ProxyThread-336] INFO  ENGINE - Database closed
+2017-06-11 01:14:52,856 [ZAP-ProxyThread-336] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:52,900 [ZAP-ProxyThread-336] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:52,906 [ZAP-ProxyThread-336] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:55,620 [ZAP-ProxyThread-344] INFO  Control - Discard Session
+2017-06-11 01:14:55,621 [ZAP-ProxyThread-344] INFO  Control - New Session
+2017-06-11 01:14:55,622 [ZAP-ProxyThread-344] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:55,639 [ZAP-ProxyThread-344] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:55,641 [ZAP-ProxyThread-344] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:55,671 [ZAP-ProxyThread-344] INFO  ENGINE - Database closed
+2017-06-11 01:14:55,792 [ZAP-ProxyThread-344] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:55,819 [ZAP-ProxyThread-344] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:55,823 [ZAP-ProxyThread-344] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:14:56,222 [ZAP-ProxyThread-349] WARN  ProxyThread - Unsupported content encoding method: br
+2017-06-11 01:14:57,399 [ZAP-ProxyThread-353] INFO  Control - Discard Session
+2017-06-11 01:14:57,419 [ZAP-ProxyThread-353] INFO  Control - New Session
+2017-06-11 01:14:57,421 [ZAP-ProxyThread-353] INFO  Control - Create and Open Untitled Db
+2017-06-11 01:14:57,504 [ZAP-ProxyThread-353] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:14:57,527 [ZAP-ProxyThread-353] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:14:57,570 [ZAP-ProxyThread-353] INFO  ENGINE - Database closed
+2017-06-11 01:14:57,696 [ZAP-ProxyThread-353] INFO  ENGINE - open start - state not modified
+2017-06-11 01:14:57,723 [ZAP-ProxyThread-353] INFO  ENGINE - dataFileCache open start
+2017-06-11 01:14:57,729 [ZAP-ProxyThread-353] INFO  ENGINE - dataFileCache open end
+2017-06-11 01:15:03,709 [Thread-965] INFO  ENGINE - dataFileCache commit start
+2017-06-11 01:15:03,714 [Thread-965] INFO  ENGINE - dataFileCache commit end
+2017-06-11 01:15:03,752 [Thread-965] INFO  ENGINE - Database closed
+2017-06-11 01:15:03,866 [Thread-965] INFO  CoreAPI - OWASP ZAP 2.5.0 terminated.

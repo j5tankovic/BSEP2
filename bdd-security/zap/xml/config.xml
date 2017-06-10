@@ -61,7 +61,7 @@
 		<processform>true</processform>
 		<sendCookies>false</sendCookies>
 		<skipurl></skipurl>
-		<requestwait>200</requestwait>
+		<requestwait>20</requestwait>
 		<parseComments>true</parseComments>
 		<parseRobotsTxt>true</parseRobotsTxt>
 	</spider>

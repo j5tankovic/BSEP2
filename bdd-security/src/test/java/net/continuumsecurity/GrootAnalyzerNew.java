@@ -6,6 +6,10 @@ import net.continuumsecurity.behaviour.ILogout;
 import net.continuumsecurity.behaviour.INavigable;
 import net.continuumsecurity.web.WebApplication;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class GrootAnalyzerNew extends WebApplication implements ILogin, ILogout, INavigable {
 
@@ -73,10 +77,10 @@ public class GrootAnalyzerNew extends WebApplication implements ILogin, ILogout,
         driver.findElement(By.id("profile-btn-edit")).click();
 
         driver.findElement(By.id("profile-input-name")).clear();
-        driver.findElement(By.id("profile-input-name")).sendKeys("Radovan555");
+        driver.findElement(By.id("profile-input-name")).sendKeys("Radovan777");
 
         driver.findElement(By.id("profile-input-surname")).clear();
-        driver.findElement(By.id("profile-input-surname")).sendKeys("Radovanko555");
+        driver.findElement(By.id("profile-input-surname")).sendKeys("Radovanovic8888");
 
         driver.findElement(By.id("profile-btn-editSave")).click();
     }
@@ -131,10 +135,18 @@ public class GrootAnalyzerNew extends WebApplication implements ILogin, ILogout,
         driver.findElement(By.id("admin-input-user-password")).clear();
         driver.findElement(By.id("admin-input-user-password")).sendKeys("User1 password");
 
-        driver.findElement(By.id("admin-input-user-role")).clear();
-        driver.findElement(By.id("admin-input-user-role")).sendKeys("STUDENT");
+        Select select = new Select(driver.findElement(By.id("admin-select-user-role")));
+        select.selectByVisibleText("STUDENT");
+
 
         driver.findElement(By.id("admin-btn-saveUser")).click();
+
+    }
+
+    public void deleteUser(String url) {
+        driver.get(Config.getInstance().getBaseUrl() + HASH_URL_PART + url);
+        List<WebElement> buttons = driver.findElements(By.id("admin-btn-deleteUser"));
+        buttons.get(buttons.size() - 1).click();
 
     }
 
@@ -144,9 +156,16 @@ public class GrootAnalyzerNew extends WebApplication implements ILogin, ILogout,
         driver.findElement(By.id("admin-btn-addCourse")).click();
 
         driver.findElement(By.id("admin-input-course-name")).clear();
-        driver.findElement(By.id("admin-input-course-name")).sendKeys("Course1");
+        driver.findElement(By.id("admin-input-course-name")).sendKeys("UPP");
 
         driver.findElement(By.id("admin-btn-saveCourse")).click();
+    }
+
+    public void deleteCourse(String url) {
+        driver.get(Config.getInstance().getBaseUrl() + HASH_URL_PART + url);
+        List<WebElement> buttons = driver.findElements(By.id("admin-btn-deleteCourse"));
+        buttons.get(buttons.size() - 1).click();
+
     }
 
     public void viewAdminPanel(String url) {

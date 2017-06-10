@@ -40,11 +40,11 @@
                     </md-input-container>
                     <md-input-container>
                         <label>Role</label>
-                        <md-select id="admin-input-user-role" ng-model="adminVm.newUser.role">
-                            <md-option ng-value="STUDENT"><em>STUDENT</em></md-option>
-                            <md-option ng-value="TEACHER"><em>TEACHER</em></md-option>
-                            <md-option ng-value="ADMIN"><em>ADMIN</em></md-option>
-                        </md-select>
+                        <select id="admin-select-user-role" ng-model="adminVm.newUser.role">
+                            <option id="admin-option-student" value="STUDENT"><em>STUDENT</em></option>
+                            <option id="admin-option-teacher" value="TEACHER"><em>TEACHER</em></option>
+                            <option id="admin-option-admin" value="ADMIN"><em>ADMIN</em></option>
+                        </select>
                     </md-input-container>
                     <md-button id="admin-btn-saveUser" class="md-raised md-primary" ng-click="adminVm.addUser()">Save</md-button>
                 </form>

@@ -112,47 +112,9 @@ public class GrootAppStepsNew {
         this.notAllowedUrl = notAllowedUrl;
     }
 
-    @When("he executes (.*)$")
-    public void executeAction(String action) {
-        this.actionName = action;
-    }
-
-//    @When("HTTP (.*) request is sent to api_url (.*)$")
-//    public void findRequestWitUrlAndMethod(String method, String api_url) throws NoSuchMethodException  {
-//        System.out.println("Method: " + method);
-//        System.out.println("Api url: " + api_url);
-//        UserPassCredentials credentials = World.getInstance().getUserPassCredentials();
-//        try{
-//            @     app.getClass().getMethod(actionName, String.class).invoke(app, allowedUrl);
-//        }catch(NoSuchMethodException nsm){
-//            throw nsm;
-//        } catch (InvocationTargetException e) {
-//            e.printStackTrace();
-//        } catch (IllegalAccessException e) {
-//            e.printStackTrace();
-//        }
-//        if (World.getInstance().getMethodProxyMap().get(actionName) != null) {
-//            log.info("The method: "
-//                    + actionName
-//                    + " has already been added to the map, using the existing HTTP logs");
-//            return;
-//        }
-//        World.getInstance().getMethodProxyMap().put(actionName, getProxyGrootApp().getHistory());
-//        List<HarEntry> harEntries =  World.getInstance().getMethodProxyMap().get(actionName);
-//        System.out.println("Har entries for action " + actionName + " " + harEntries.size());
-//        List<HarEntry> apiUrls = getProxyGrootApp().findInRequestHistory(api_url);
-//        for (HarEntry he: apiUrls) {
-//            System.out.println("Har entry and method:" + he.getRequest().getMethod());
-//            if (method.equals(he.getRequest().getMethod())){
-//                World.getInstance().setCurrentHar(he);
-//                break;
-//            }
-//        }
-//    }
 
     @Then("the status code in response should be 200")
-    public void verifyOkStatusCode() throws NoSuchMethodException {
-        UserPassCredentials credentials = World.getInstance().getUserPassCredentials();
+    public void verifyOkStatusCode() throws NoSuchMethodException, InterruptedException {
         try{
             app.getClass().getMethod(actionName, String.class).invoke(app, allowedUrl);
         }catch(NoSuchMethodException nsm){
@@ -162,39 +124,23 @@ public class GrootAppStepsNew {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-        if (World.getInstance().getMethodProxyMap().get(actionName) != null) {
-            log.info("The method: "
-                    + actionName
-                    + " has already been added to the map, using the existing HTTP logs");
-            return;
-        }
+        Thread.sleep(2000);
         World.getInstance().getMethodProxyMap().put(actionName, getProxyGrootApp().getHistory());
         List<HarEntry> harEntries =  World.getInstance().getMethodProxyMap().get(actionName);
         boolean everyResponseIsOk = true;
-        HarEntry notOkEntry = null;
-        for (HarEntry he: harEntries) {
-            System.out.println(he.getRequest().getMethod() + " " + he.getRequest().getUrl());
-            System.out.println(he.getResponse().getStatus());
-            System.out.println("=========");
+        List<HarEntry> filteredEntries = excludeEntriesForBdicFiles(harEntries);
+        for (HarEntry he: filteredEntries) {
             if (he.getResponse().getStatus() != 200) {
                 everyResponseIsOk = false;
-                notOkEntry = he;
                 break;
             }
         }
 
-        if (!everyResponseIsOk) {
-            System.out.println("HarEntry is: " + notOkEntry);
-        }
-
         assertThat(everyResponseIsOk, is(true));
-
-
     }
 
-    @Then("the status code response should be 403")
-    public void verifyUnauthorizedStatusCode() throws NoSuchMethodException {
-        UserPassCredentials credentials = World.getInstance().getUserPassCredentials();
+    @Then("the status code in response should be 403")
+    public void verifyUnauthorizedStatusCode() throws NoSuchMethodException, InterruptedException {
         try{
             app.getClass().getMethod(actionName, String.class).invoke(app, notAllowedUrl);
         }catch(NoSuchMethodException nsm){
@@ -204,6 +150,32 @@ public class GrootAppStepsNew {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-        assertThat(World.getInstance().getCurrentHar().getResponse().getStatus(), is(equalTo(403)));
+        Thread.sleep(2000);
+        World.getInstance().getMethodProxyMap().put(actionName, getProxyGrootApp().getHistory());
+        List<HarEntry> harEntries =  World.getInstance().getMethodProxyMap().get(actionName);
+        boolean responseWith403Exists = false;
+        List<HarEntry> filteredEntries = excludeEntriesForBdicFiles(harEntries);
+        for (HarEntry he: filteredEntries) {
+            if (he.getResponse().getStatus() == 403) {
+                responseWith403Exists = true;
+                break;
+            }
+        }
+
+        assertThat(responseWith403Exists, is(true));
+    }
+
+    private List<HarEntry> excludeEntriesForBdicFiles(List<HarEntry> harEntries) {
+        List<HarEntry> filteredEntries = new ArrayList<>();
+        boolean isRedirectorUrl = false;
+        boolean is302ResponseStatus = false;
+        for (HarEntry he: harEntries) {
+            isRedirectorUrl = he.getRequest().getUrl().contains("https://redirector.gvt1.com");
+            is302ResponseStatus = he.getResponse().getStatus() == 302;
+            if (!isRedirectorUrl && !is302ResponseStatus) {
+                filteredEntries.add(he);
+            }
+        }
+        return filteredEntries;
     }
 }

@@ -3,10 +3,10 @@
         <div flex-gt-sm="70" flex>
             <h1 class="md-headline">Announcements</h1>
         </div>
-        <div ng-if="courseVm.loggedUser.role == 'TEACHER' && !courseVm.isAnnouncementFormVisible">
+        <div ng-if="!courseVm.isAnnouncementFormVisible">
             <md-button class="md-raised md-accent" id="announcements-btn-newAnnouncement" ng-click="courseVm.toggleFormVisibility()">New announcement</md-button>
         </div>
-        <div ng-if="courseVm.loggedUser.role == 'TEACHER' && courseVm.isAnnouncementFormVisible">
+        <div ng-if="courseVm.isAnnouncementFormVisible">
             <md-button class="md-raised md-accent" id="announcements-btn-cancel" ng-click="courseVm.toggleFormVisibility()">Cancel</md-button>
         </div>
     </div>

@@ -68,6 +68,16 @@ public class WebApplication extends Application {
         return browser.getWebDriver().findElement(by);
     }
 
+    public WebElement findAndWaitForElementToBeClickable(By by) {
+        try {
+            WebDriverWait wait = new WebDriverWait(browser.getWebDriver(), 10);
+            wait.until(ExpectedConditions.elementToBeClickable(by));
+        } catch (TimeoutException e) {
+            throw new NoSuchElementException(e.getMessage());
+        }
+        return browser.getWebDriver().findElement(by);
+    }
+
     public void navigate() {
         browser.getWebDriver().get(Config.getInstance().getBaseUrl());
     }

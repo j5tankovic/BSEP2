@@ -8,11 +8,6 @@
     <baseUrl>http://localhost:8080/</baseUrl>
     <class>net.continuumsecurity.GrootAnalyzerNew</class>
 
-    <sslyze>
-        <path>/opt/sslyze/sslyze_cli.py</path>
-        <option>--regular</option>
-    </sslyze>
-
     <users>
         <user username="teacher" password="password"/>
         <user username="student" password="password"/>
@@ -22,19 +17,10 @@
     <defaultUsername>student</defaultUsername>
     <defaultPassword>password</defaultPassword>
 
-    <scanner>
-        <ignoreUrl>.*logout.*</ignoreUrl>
-        <spiderUrl>baseUrl</spiderUrl>
-    </scanner>
-
     <upstreamProxy>
         <host></host>
         <port></port>
     </upstreamProxy>
-
-    <incorrectPassword>pogresnaSifra</incorrectPassword>
-    <incorrectUsername>pogresanUsername</incorrectUsername>
-
 
     <zapPath>zap/zap.bat</zapPath>
 

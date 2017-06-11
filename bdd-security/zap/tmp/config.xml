@@ -24,7 +24,7 @@
 </connection>
 <proxy>
 		<ip>127.0.0.1</ip>
-		<port>52035</port>
+		<port>61172</port>
 		<reverseProxy>
 			<use>0</use>	
 			<ip>localhost</ip>

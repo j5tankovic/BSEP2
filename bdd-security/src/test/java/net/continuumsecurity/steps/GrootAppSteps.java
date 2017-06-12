@@ -7,6 +7,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import edu.umass.cs.benchlab.har.HarEntry;
 import net.continuumsecurity.Config;
+import net.continuumsecurity.TestingOption;
 import net.continuumsecurity.UserPassCredentials;
 import net.continuumsecurity.behaviour.ILogin;
 import net.continuumsecurity.behaviour.ILogout;
@@ -41,29 +42,11 @@ public class GrootAppSteps {
 
     @Given("^a new intercepting proxy browser$")
     public void initializeBrowserForApp() {
-        app = Config.getInstance().createApp();
+        app = Config.getInstance().createApp(TestingOption.SERVICE);
         app.enableHttpLoggingClient();
         World.getInstance().setCredentials(new UserPassCredentials("", ""));
-//        createGrootApp();
     }
 
-//    public void createGrootApp() {
-//        app = Config.getInstance().createApp();
-//        app.enableDefaultClient();
-//        //simulates logout (erases content)
-//        //app.getAuthTokenManager().deleteAuthTokens();
-//        World.getInstance().setCredentials(new UserPassCredentials("", ""));
-//    }
-
-//    @Given("^configured instance for logging proxy$")
-//    public void loggingClient() {
-//        app.enableHttpLoggingClient();
-//    }
-//
-//    @When("^clear prx logs$")
-//    public void clearProxyForGrootApp() {
-//        getProxyGrootApp().clear();
-//    }
 
     @Given("^cleared proxy logs$")
     public void clearProxyLogs() {

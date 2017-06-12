@@ -19,6 +19,7 @@
 package net.continuumsecurity.web;
 
 import net.continuumsecurity.Config;
+import net.continuumsecurity.TestingOption;
 import net.continuumsecurity.UnexpectedContentException;
 import net.continuumsecurity.clients.AuthTokenManager;
 import net.continuumsecurity.clients.Browser;
@@ -79,7 +80,7 @@ public class WebApplication extends Application {
     }
 
     public void navigate() {
-        browser.getWebDriver().get(Config.getInstance().getBaseUrl());
+        browser.getWebDriver().get(Config.getInstance().getBaseUrl(TestingOption.SERVICE));
     }
 
     @Override

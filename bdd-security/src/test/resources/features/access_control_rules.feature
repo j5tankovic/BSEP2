@@ -16,14 +16,14 @@ Feature: Access Control
      Examples:
 		| allowed_url                    | action               | role       |
 		| /profile                       | editProfile          | STUDENT    |
-		| /courses/1/announcements/1     | deleteAnnouncement   | TEACHER    |
 		| /courses/1/announcements       | addAnnouncement      | TEACHER    |
 		| /courses/1/announcements/1     | editAnnouncement     | TEACHER    |
+		| /courses/1/announcements/1     | deleteAnnouncement   | TEACHER    |
 		| /profile                       | editProfile          | TEACHER    |
-		| /admin/courses                 | deleteCourse         | ADMIN      |
 		| /admin/users                   | deleteUser           | ADMIN      |
-		| /admin/courses                 | addCourse            | ADMIN      |
 		| /admin/users                   | addUser              | ADMIN      |
+		| /admin/courses                 | deleteCourse         | ADMIN      |
+		| /admin/courses                 | addCourse            | ADMIN      |
 
 	@not_allowed_actions
 	Scenario Outline: Users can not perform actions for restricted resources
@@ -38,18 +38,18 @@ Feature: Access Control
      Then the status code in response should be 403
      Examples:
 		| not_allowed_url                | action               | role       |
-		| /courses/1/announcements       | addAnnouncement      | STUDENT    |
-		| /admin/users                   | deleteUser           | STUDENT    |
 		| /admin/courses                 | addCourse            | STUDENT    |
-		| /admin/courses                 | deleteCourse         | STUDENT    |
 		| /courses/1/announcements/1     | deleteAnnouncement   | STUDENT    |
+		| /courses/1/announcements       | addAnnouncement      | STUDENT    |
+		| /admin/courses                 | deleteCourse         | STUDENT    |
 		| /courses/1/announcements/1     | editAnnouncement     | STUDENT    |
+		| /admin/users                   | deleteUser           | STUDENT    |
 		| /admin/users                   | addUser              | STUDENT    |
 		| /admin/courses                 | deleteCourse         | TEACHER    |
 		| /admin/users                   | deleteUser           | TEACHER    |
-		| /admin/courses                 | addCourse            | TEACHER    |
 		| /admin/users                   | addUser              | TEACHER    |
-		| /courses/1/announcements/1     | deleteAnnouncement   | ADMIN      |
+		| /admin/courses                 | addCourse            | TEACHER    |
 		| /courses/1/announcements       | addAnnouncement      | ADMIN      |
 		| /courses/1/announcements/1     | editAnnouncement     | ADMIN      |
+		| /courses/1/announcements/1     | deleteAnnouncement   | ADMIN      |
 		| /profile                       | editProfile          | ADMIN      |

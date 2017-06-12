@@ -1,0 +1,33 @@
+<section layout="row" flex layout-fill>
+        <md-sidenav
+                class="md-sidenav-left"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-md')"
+                md-whiteframe="4"
+                layout="column">
+            <md-toolbar>
+                <h1 class="md-toolbar-tools">{{courseVm.course.name}}</h1>
+            </md-toolbar>
+            <md-content>
+                <md-list>
+                    <md-item>
+                        <a ng-click="courseVm.toAnnouncements()">
+                            <md-item-content>
+                                <div class="inset">Announcements</div>
+                            </md-item-content>
+                        </a>
+                    </md-item>
+                    <md-item>
+                        <a ng-click="courseVm.toPeople()">
+                            <md-item-content>
+                                <div class="inset">People</div>
+                            </md-item-content>
+                        </a>
+                    </md-item>
+                </md-list>
+            </md-content>
+        </md-sidenav>
+    <md-content flex layout="column" layout-padding>
+        <ui-view></ui-view>
+    </md-content>
+</section>

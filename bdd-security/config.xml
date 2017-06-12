@@ -5,8 +5,12 @@
     <defaultDriver path="src/test/resources/drivers/chromedriver.exe">Chrome</defaultDriver>
 
     <!-- Base URL of the application to test -->
-    <baseUrl>http://localhost:8080/</baseUrl>
-    <class>net.continuumsecurity.GrootApplication</class>
+    <!-- <baseUrl>http://localhost:8080/</baseUrl> -->
+    <protectedAppClass>net.continuumsecurity.GrootApplicationClient</protectedAppClass>
+    <unprotectedAppClass>net.continuumsecurity.GrootApplicationService</unprotectedAppClass>
+
+    <protectedAppUrl>http://localhost:8082/</protectedAppUrl>
+    <unprotectedAppUrl>http://localhost:8081/</unprotectedAppUrl>
 
     <users>
         <user username="teacher" password="password"/>

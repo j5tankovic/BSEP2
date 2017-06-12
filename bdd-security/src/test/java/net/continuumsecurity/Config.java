@@ -39,10 +39,10 @@ public class Config {
     private String proxyApi;
     private static Config config;
 
-    public Application createApp() {
+    public Application createApp(TestingOption option) {
         Object app = null;
         try {
-            Class appClass = Class.forName(Config.getInstance().getClassName());
+            Class appClass = Class.forName(Config.getInstance().getClassName(option));
             app = appClass.newInstance();
             return (Application) app;
         } catch (Exception e) {
@@ -91,12 +91,31 @@ public class Config {
         return spiderUrls;
     }
 
-    public String getClassName() {
-        return validateAndGetString("class");
+    public String getClassName(TestingOption option) {
+        String className = "";
+        switch(option) {
+            case SERVICE:
+                className = validateAndGetString("unprotectedAppClass");
+                break;
+            case CLIENT:
+                className = validateAndGetString("protectedAppClass");
+                break;
+        }
+
+        return className;
     }
 
-    public String getBaseUrl() {
-        return validateAndGetString("baseUrl");
+    public String getBaseUrl(TestingOption option) {
+        String baseUrl = "";
+        switch(option) {
+            case SERVICE:
+                baseUrl = validateAndGetString("unprotectedAppUrl");
+                break;
+            case CLIENT:
+                baseUrl = validateAndGetString("protectedAppUrl");
+                break;
+        }
+        return baseUrl;
     }
 
     public String getDefaultDriver() {
@@ -195,6 +214,14 @@ public class Config {
     public String getNessusPassword() { return validateAndGetString("nessus.password");}
 
     public String getUpstreamProxyHost() { return validateAndGetString("upstreamProxy.host"); }
+
+    public String getProtectedAppUrl() {
+        return validateAndGetString("protectedAppUrl");
+    }
+
+    public String getUnprotectedAppUrl() {
+        return validateAndGetString("unprotectedAppUrl");
+    }
 
     public int getUpstreamProxyPort() {
         String portAsString = validateAndGetString("upstreamProxy.port");

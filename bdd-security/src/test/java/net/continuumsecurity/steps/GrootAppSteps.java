@@ -41,9 +41,16 @@ public class GrootAppSteps {
     }
 
     @Given("^a new intercepting proxy browser$")
-    public void initializeBrowserForApp() {
+    public void initializeLoggingProxyBrowserForApp() {
         app = Config.getInstance().createApp(TestingOption.SERVICE);
         app.enableHttpLoggingClient();
+        World.getInstance().setCredentials(new UserPassCredentials("", ""));
+    }
+
+    @Given("^a new browser$")
+    public void initiBrowserForApp() {
+        app = Config.getInstance().createApp(TestingOption.CLIENT);
+        app.enableDefaultClient();
         World.getInstance().setCredentials(new UserPassCredentials("", ""));
     }
 
@@ -156,6 +163,19 @@ public class GrootAppSteps {
         }
 
         assertThat(responseWith403Exists, is(true));
+    }
+
+    @Then("the unauthorized view should appear")
+    public void verifyUnauthorizedViewIsPresent() throws NoSuchMethodException{
+        try{
+            app.getClass().getMethod(actionName, String.class).invoke(app, notAllowedUrl);
+        }catch(NoSuchMethodException nsm){
+            throw nsm;
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
     private List<HarEntry> excludeEntriesForBdicFiles(List<HarEntry> harEntries) {

@@ -18,15 +18,15 @@
         activate();
 
         function activate() {
-            console.log("Activate");
-            debugger;
-            findUser()
-                .then(findCourses)
+            var user = sessionService.getUser();
+            if (user) {
+                var id = user.id;
+                findUser(id)
+                    .then(findCourses)
+            }
         }
 
-        function findUser() {
-            var user = sessionService.getUser();
-            var id = user.id;
+        function findUser(id) {      
             return userService.findOne(id)
                 .then(function(response) {
                     homeVm.user = response.data;

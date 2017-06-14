@@ -20,13 +20,15 @@
 
         function activate() {
             var user = sessionService.getUser();
-            var userId = user.id;
-            userService.findOne(userId)
-                .then(function(response){
-                    mainVm.user.name = response.data.name;
-                }).catch(function(error){
+            if (user) {
+                var userId = user.id;
+                userService.findOne(userId)
+                    .then(function(response){
+                        mainVm.user.name = response.data.name;
+                    }).catch(function(error){
 
-            });
+                });
+            }
         }
 
         function logout() {

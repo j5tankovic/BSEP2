@@ -25,7 +25,7 @@
                     return JSON.parse(loggedInUser);
                 }
             }
-            return loggedInUser;
+            return null;
         }
 
         function setUser(user) {

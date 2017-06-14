@@ -33,7 +33,7 @@
                 });
             };
 
-            $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
+            $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
                 var loggedUser = sessionService.getUser();
 
                 if (routeIsIn(restrictedRoutesForLoggedUser, $location.url()) && loggedUser) {
@@ -46,8 +46,11 @@
                 if (!routeIsIn(publicRoutes, $location.url()) && !loggedUser) {
                     $location.path('/login');
                 }
+                else if (routeIsIn(allowedRoutesForAdmin, $location.url()) && !roleService.isAdmin(loggedUser)) {
+                    $location.path("/unauthorized").replace();
+                }
                 else if (!routeIsIn(allowedRoutesForAdmin, $location.url()) && roleService.isAdmin(loggedUser)) {
-                    $location.path("/admin");
+                    $location.path("/unauthorized").replace();
                 }
             });
         });

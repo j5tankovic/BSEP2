@@ -1,8 +1,8 @@
-@authorisation
+@authorisation_service
 Feature: Access Control
   Verify that access control model is satisfied
 
-	@allowed_actions
+	@allowed_actions_service
 	Scenario Outline: Users can perform actions for restricted resources
 	 Given a new intercepting proxy browser
      And cleared proxy logs
@@ -25,7 +25,7 @@ Feature: Access Control
 		| /admin/users              | removeUser           | ADMIN      |
 		| /admin/users              | addUser              | ADMIN      |
 
-	@not_allowed_actions
+	@not_allowed_actions_service
 	Scenario Outline: Users can not perform actions for restricted resources
 	 Given a new intercepting proxy browser
 	 And cleared proxy logs

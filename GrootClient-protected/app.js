@@ -24,34 +24,40 @@
 
             var publicRoutes = ["/login"];
             var restrictedRoutesForLoggedUser = ["/login"];
-            var allowedRoutesForAdmin = ["/admin", "admin/courses", "admin/people", "/profile"];
-            var adminRoutes = ["/admin"];
+            var allowedRoutesForAdmin = ["/admin", "/courses", "/users"];
 
             var routeIsIn = function (routes, currentRoute) {
                 return _.find(routes, function (route) {
-                    return _.startsWith(currentRoute, route);
+                    return currentRoute === route;
                 });
             };
 
             $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
                 var loggedUser = sessionService.getUser();
 
-                if (routeIsIn(restrictedRoutesForLoggedUser, $location.url()) && loggedUser) {
-                    if (fromParams){
-                        from.url = from.url.replace(/:id/gm,fromParams.id);
+                if (routeIsIn(restrictedRoutesForLoggedUser, to.url) && loggedUser) {
+                    if (roleService.isAdmin(loggedUser)) {
+                        $location.path(from.url).replace();
+                    } else {
+                        $location.path(from.url).replace();
                     }
-                    $location.path(from.url);
+                    // if (fromParams){
+                    //     from.url = from.url.replace(/:id/gm,fromParams.id);
+                    // }
+                    // $location.path(from.url);
                 }
 
-                if (!routeIsIn(publicRoutes, $location.url()) && !loggedUser) {
+                else if (!routeIsIn(publicRoutes, to.url) && !loggedUser) {
                     $location.path('/login');
                 }
-                else if (routeIsIn(allowedRoutesForAdmin, $location.url()) && !roleService.isAdmin(loggedUser)) {
+                else if (routeIsIn(allowedRoutesForAdmin, to.url) && !roleService.isAdmin(loggedUser)) {
                     $location.path("/unauthorized").replace();
                 }
-                else if (!routeIsIn(allowedRoutesForAdmin, $location.url()) && roleService.isAdmin(loggedUser)) {
+                else if (!routeIsIn(allowedRoutesForAdmin, to.url) && roleService.isAdmin(loggedUser)) {
                     $location.path("/unauthorized").replace();
                 }
+
+
             });
         });
 

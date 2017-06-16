@@ -4,7 +4,9 @@ import edu.umass.cs.benchlab.har.HarEntry;
 import net.continuumsecurity.Credentials;
 import net.continuumsecurity.UserPassCredentials;
 import net.continuumsecurity.jsslyze.JSSLyze;
+import net.continuumsecurity.web.UrlHelper;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +28,7 @@ public class World {
     private boolean sslRunCompleted;
     private HarEntry currentHar;
     private JSSLyze jSSLyze;
+    private Map<String, List<UrlHelper>> urlOptions = new HashMap<>();
 
     public synchronized Map<String, List<HarEntry>> getMethodProxyMap() {
         return methodProxyMap;
@@ -52,6 +55,7 @@ public class World {
     }
 
     private World() {
+        this.initializeUrlOptionsMap();
     }
 
     public JSSLyze getjSSLyze() {
@@ -113,4 +117,34 @@ public class World {
     public void setCurrentHar(HarEntry currentHar) {
         this.currentHar = currentHar;
     }
+
+    public void initializeUrlOptionsMap() {
+        List<UrlHelper> addAnnouncementUrls = new ArrayList<>();
+        addAnnouncementUrls.add(new UrlHelper(1));
+
+        List<UrlHelper> editAnnouncementUrls = new ArrayList<>();
+        editAnnouncementUrls.add(new UrlHelper(1, 1));
+
+        List<UrlHelper> deleteAnnouncementUrls = new ArrayList<>();
+        deleteAnnouncementUrls.add(new UrlHelper(1, 2));
+        deleteAnnouncementUrls.add(new UrlHelper(1, 3));
+        deleteAnnouncementUrls.add(new UrlHelper(1, 4));
+        deleteAnnouncementUrls.add(new UrlHelper(1, 5));
+        deleteAnnouncementUrls.add(new UrlHelper(1, 6));
+        deleteAnnouncementUrls.add(new UrlHelper(1, 7));
+
+        this.urlOptions.put("addAnnouncement", addAnnouncementUrls);
+        this.urlOptions.put("editAnnouncement", editAnnouncementUrls);
+        this.urlOptions.put("deleteAnnouncement", deleteAnnouncementUrls);
+    }
+
+    public Map<String, List<UrlHelper>>  getUrlOptionsMap() {
+        return this.urlOptions;
+    }
+
+
+
+
+
+
 }

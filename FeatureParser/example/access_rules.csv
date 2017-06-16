@@ -1,8 +1,8 @@
 role, allowed_url, allowed_action
 student, /profile, editProfile
-teacher, /courses/1/announcements, addAnnouncement
-teacher, /courses/1/announcements/1, editAnnouncement
-teacher, /courses/1/announcements/1, deleteAnnouncement
+teacher, /courses/*/announcements, addAnnouncement
+teacher, /courses/*/announcements/*, editAnnouncement
+teacher, /courses/*/announcements/*, deleteAnnouncement
 teacher, /profile, editProfile
 admin, /admin/users, addUser
 admin, /admin/users, deleteUser

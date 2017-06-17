@@ -73,4 +73,11 @@ public class CourseServiceImpl implements CourseService {
     public List<User> findUsers(long id) {
         return null;
     }
+
+    @Override
+    public void addUserToCourse(Course course, User user) {
+        course.getUsers().add(user);
+
+        courseRepository.save(course);
+    }
 }

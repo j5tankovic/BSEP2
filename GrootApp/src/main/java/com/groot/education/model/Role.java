@@ -17,7 +17,8 @@ public enum Role {
     ADMIN(new Permission[]{Permission.ADD_USER,
             Permission.DELETE_USER,
             Permission.ADD_COURSE,
-            Permission.DELETE_COURSE});
+            Permission.DELETE_COURSE,
+            Permission.ADD_USER_TO_COURSE});
 
     private final Permission[] permissions;
 

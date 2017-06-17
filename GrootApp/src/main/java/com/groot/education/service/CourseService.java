@@ -27,4 +27,6 @@ public interface CourseService {
     void deleteAnnouncement(long id, long announcementId);
 
     List<User> findUsers(long id);
+
+    void addUserToCourse(Course course, User user);
 }

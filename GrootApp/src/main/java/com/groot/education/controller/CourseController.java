@@ -2,10 +2,12 @@ package com.groot.education.controller;
 
 import com.groot.education.controller.exception.NotFoundException;
 import com.groot.education.dto.AnnouncementDTO;
+import com.groot.education.dto.CourseUserDTO;
 import com.groot.education.model.Announcement;
 import com.groot.education.model.Course;
 import com.groot.education.model.User;
 import com.groot.education.service.CourseService;
+import com.groot.education.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,10 +24,12 @@ import java.util.List;
 public class CourseController {
 
     private final CourseService courseService;
+    private final UserService userService;
 
     @Autowired
-    public CourseController(CourseService courseService) {
+    public CourseController(CourseService courseService, UserService userService) {
         this.courseService = courseService;
+        this.userService = userService;
     }
 
     @Transactional
@@ -105,9 +109,9 @@ public class CourseController {
                                              @PathVariable long announcementId,
                                              @RequestBody AnnouncementDTO announcementDTO) {
         courseService.findById(id).orElseThrow(NotFoundException::new);
-        Announcement announcement = courseService.findAnnouncement(announcementId).orElseThrow(NotFoundException::new);
-        Announcement announcementToEdit = convertFromDTO(announcementDTO);
-        Announcement edited = courseService.editAnnouncement(announcement, announcementToEdit);
+        final Announcement announcement = courseService.findAnnouncement(announcementId).orElseThrow(NotFoundException::new);
+        final Announcement announcementToEdit = convertFromDTO(announcementDTO);
+        final Announcement edited = courseService.editAnnouncement(announcement, announcementToEdit);
 
         return new ResponseEntity<>(edited, HttpStatus.OK);
     }
@@ -131,6 +135,22 @@ public class CourseController {
         final List<User> people = course.getUsers();
 
         return new ResponseEntity<>(people, HttpStatus.OK);
+    }
+
+    @Transactional
+    @PostMapping("/{id}/users")
+    @PreAuthorize("hasAnyAuthority('ADD_USER_TO_COURSE')")
+    public ResponseEntity addUserToCourse(@PathVariable long id,
+                                          @RequestBody CourseUserDTO courseUser) {
+        final String username = courseUser.getUsername();
+
+        final Course course = courseService.findById(id).orElseThrow(NotFoundException::new);
+        final User user = userService.findByUsername(username).orElseThrow(NotFoundException::new);
+
+        courseService.addUserToCourse(course, user);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+
     }
 
     private Announcement convertFromDTO(AnnouncementDTO announcementDTO) {

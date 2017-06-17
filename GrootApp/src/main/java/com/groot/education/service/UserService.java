@@ -13,6 +13,8 @@ public interface UserService {
 
     Optional<User> findByToken(String token);
 
+    Optional<User> findByUsername(String username);
+
     List<User> findAll();
 
     void add(User user);

@@ -13,27 +13,25 @@
 
         adminVm.courses = [];
         adminVm.users = [];
-
         adminVm.newUser = {};
         adminVm.newCourse = {};
-
+        adminVm.selectedCourse = {};
+        adminVm.userToCourse = {};
         adminVm.isUserFormVisible = false;
         adminVm.isCourseFormVisible = false;
 
         adminVm.addCourse = addCourse;
         adminVm.deleteCourse  = deleteCourse;
-
         adminVm.addUser = addUser;
         adminVm.deleteUser = deleteUser;
-
         adminVm.addUserToCourse = addUserToCourse;
-
         adminVm.toUsers = toUsers;
         adminVm.toCourses = toCourses;
         adminVm.toCourse = toCourse;
-
+        adminVm.toUserToCourse = toUserToCourse;
         adminVm.toggleUserFormVisibility = toggleUserFormVisibility;
         adminVm.toggleCourseFormVisibility = toggleCourseFormVisibility;
+        adminVm.selectCourse = selectCourse;
 
         activate();
 
@@ -68,8 +66,8 @@
                 .then(function(response){
                     activate();
                 }).catch(function(error){
-                    //TODO
-            })
+                    console.log("Failed due to", error);
+            });
         }
 
         function addUser() {
@@ -87,12 +85,19 @@
                 .then(function(response) {
                     activate();
                 }).catch(function(error) {
-                console.log("Failed due to", error);
+                    console.log("Failed due to", error);
             });
         }
 
         function addUserToCourse() {
-
+            courseService.addUser(adminVm.selectedCourse.id, adminVm.userToCourse)
+                .then(function(response) {
+                    console.log("User added to course");
+                    adminVm.selectedCourse = {};
+                    adminVm.userToCourse = {};
+                }).catch(function(error) {
+                    console.log("Failed due to", error);
+            });
         }
 
         function toUsers() {
@@ -107,6 +112,9 @@
             $state.go('main.admin.course', {courseId: course.id});
         }
 
+        function toUserToCourse(course) {
+            $state.go('main.admin.userToCourse');
+        }
 
         function toggleUserFormVisibility() {
             adminVm.isUserFormVisible = !adminVm.isUserFormVisible;
@@ -116,6 +124,10 @@
         function toggleCourseFormVisibility() {
             adminVm.isCourseFormVisible = !adminVm.isCourseFormVisible;
             adminVm.newCourse = {};
+        }
+
+        function selectCourse(course) {
+            adminVm.selectedCourse = course;
         }
 
     }

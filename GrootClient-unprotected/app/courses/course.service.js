@@ -23,6 +23,7 @@
             addAnnouncement: addAnnouncement,
             updateAnnouncement: updateAnnouncement,
             deleteAnnouncement: deleteAnnouncement,
+            addUser: addUser,
         };
 
         function findAll() {
@@ -54,7 +55,11 @@
         }
 
         function deleteAnnouncement(courseId, announcement) {
-            return $http.delete(pathWithId(courseId) + `/announcements/${announcement.id}`)
+            return $http.delete(pathWithId(courseId) + `/announcements/${announcement.id}`);
+        }
+
+        function addUser(courseId, userToCourse) {
+            return $http.post(pathWithId(courseId) + '/users', userToCourse);
         }
     }
 })(angular);

@@ -24,7 +24,7 @@
 
             var publicRoutes = ["/login"];
             var restrictedRoutesForLoggedUser = ["/login"];
-            var allowedRoutesForAdmin = ["/admin", "/courses", "/users"];
+            var allowedRoutesForAdmin = ["/admin", "/courses", "/users", "/userToCourse"];
 
             var routeIsIn = function (routes, currentRoute) {
                 return _.find(routes, function (route) {
@@ -36,15 +36,7 @@
                 var loggedUser = sessionService.getUser();
 
                 if (routeIsIn(restrictedRoutesForLoggedUser, to.url) && loggedUser) {
-                    if (roleService.isAdmin(loggedUser)) {
-                        $location.path(from.url).replace();
-                    } else {
-                        $location.path(from.url).replace();
-                    }
-                    // if (fromParams){
-                    //     from.url = from.url.replace(/:id/gm,fromParams.id);
-                    // }
-                    // $location.path(from.url);
+                    $location.path(from.url).replace();
                 }
 
                 else if (!routeIsIn(publicRoutes, to.url) && !loggedUser) {

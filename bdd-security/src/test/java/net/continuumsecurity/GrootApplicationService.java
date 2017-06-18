@@ -39,29 +39,6 @@ public class GrootApplicationService extends WebApplication implements ILogin, I
         return driver.getPageSource().contains("GrootEdu");
     }
 
-    public void viewCourses(String url){
-        driver.get(getUrl(url));
-        driver.findElement(By.id("home-list-courses"));
-    }
-
-    public void viewCourse(String url) {
-        driver.get(getUrl(url));
-    }
-
-    public void viewAnnouncements(String url) {
-        driver.get(getUrl(url));
-    }
-
-    public void viewAnnouncement(String url) {
-        driver.get(getUrl(url));
-    }
-
-    public void viewPeople(String url) {
-
-        driver.get(getUrl(url));
-        driver.findElement(By.id("people-list"));
-    }
-
     public void editProfile(String url) {
         System.out.println("Url is:" + url);
         driver.get(getUrl(url));
@@ -160,8 +137,15 @@ public class GrootApplicationService extends WebApplication implements ILogin, I
 
     }
 
-    public void viewAdminPanel(String url) {
+    public void addUserToCourse(String url) {
         driver.get(getUrl(url));
+        List<WebElement> listItems = driver.findElements(By.id("admin-listItem-course"));
+        listItems.get(0).click();
+
+        driver.findElement(By.id("admin-input-userToCourse-username")).clear();
+        driver.findElement(By.id("admin-input-userToCourse-username")).sendKeys("student1");
+
+        driver.findElement(By.id("admin-btn-addUserToCourse")).click();
     }
 
     @Override

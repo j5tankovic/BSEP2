@@ -22,12 +22,12 @@
                     controller: 'AdminCtrlAs',
                     controllerAs: 'adminVm'
                 })
-                .state('main.admin.course', {
-                    url: '/courses/:courseId',
-                    templateUrl: 'app/user/admin/adminPanelCourse.html',
+                .state('main.admin.userToCourse', {
+                    url: '/userToCourse',
+                    templateUrl: 'app/user/admin/adminPanelUserToCourse.html',
                     controller: 'AdminCtrlAs',
                     controllerAs: 'adminVm'
-                })
+                });
         });
 
 }(angular));

@@ -39,33 +39,11 @@ public class GrootApplicationClient extends WebApplication implements ILogin, IL
         return driver.getPageSource().contains("GrootEdu");
     }
 
-    public void viewCourses(String url) {
-        driver.get(getUrl(url));
-        driver.findElement(By.id("home-list-courses"));
-    }
-
-    public void viewCourse(String url) {
-        driver.get(getUrl(url));
-    }
-
-    public void viewAnnouncements(String url) {
-        driver.get(getUrl(url));
-    }
-
-    public void viewAnnouncement(String url) {
-        driver.get(getUrl(url));
-    }
-
-    public WebElement viewPeople(String url) {
-        driver.get(getUrl(url));
-        return driver.findElement(By.id("people-list"));
-    }
-
     public boolean editProfile(String url) {
+        System.out.println("Url is:" + url);
         driver.get(getUrl(url));
         return checkForElementPresence("profile-btn-edit");
     }
-
 
     public boolean addAnnouncement(String url) {
         driver.get(getUrl(url));
@@ -104,8 +82,9 @@ public class GrootApplicationClient extends WebApplication implements ILogin, IL
         return checkForElementPresence("admin-btn-deleteCourse");
     }
 
-    public void viewAdminPanel(String url) {
+    public boolean addUserToCourse(String url) {
         driver.get(getUrl(url));
+        return checkForElementPresence("admin-btn-addUserToCourse");
     }
 
     @Override
@@ -122,7 +101,7 @@ public class GrootApplicationClient extends WebApplication implements ILogin, IL
         try {
             driver.findElement(By.id(elementId));
             elementIsPresent = true;
-        } catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             elementIsPresent = false;
         }
         return elementIsPresent;

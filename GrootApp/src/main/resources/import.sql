@@ -23,7 +23,6 @@ INSERT INTO `course_users` (`courses_id`, `users_id`) VALUES (2,1);
 INSERT INTO `course_users` (`courses_id`, `users_id`) VALUES (2,2);
 INSERT INTO `course_users` (`courses_id`, `users_id`) VALUES (1,1);
 INSERT INTO `course_users` (`courses_id`, `users_id`) VALUES (1,2);
-INSERT INTO `course_users` (`courses_id`, `users_id`) VALUES (1,4);
 
 INSERT INTO `user_permission` (`user`, `permission`) VALUES (1,'EDIT_PROFILE');
 INSERT INTO `user_permission` (`user`, `permission`) VALUES (2,'ADD_ANNOUNCEMENT');

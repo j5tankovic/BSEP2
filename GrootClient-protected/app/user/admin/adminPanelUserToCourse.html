@@ -1,0 +1,34 @@
+<section>
+    <div layout="row">
+        <div flex-gt-sm="50" flex>
+            <div md-whiteframe="3">
+                <md-toolbar>
+                    <h1 class="md-toolbar-tools">Courses</h1>
+                </md-toolbar>
+                <div layout="column" flex-md flex-gt-md="50">
+                    <md-list-item id="admin-listItem-course" layout-padding ng-repeat="course in adminVm.courses" ng-click="adminVm.selectCourse(course)">
+                        <h3>{{ course.name }}</h3>
+                    </md-list-item>
+                </div>
+            </div>
+        </div>
+        <div flex-gt-sm="50" flex>
+            <div md-whiteframe="3">
+                 <md-toolbar>
+                    <h2 class="md-toolbar-tools">Selected course: {{adminVm.selectedCourse.name}}</h2>
+                </md-toolbar>
+                <md-content layout-padding layout-align="center center">
+                    <div flex-gt-md="40" md-whiteframe="3">
+                        <form layout="column">
+                            <md-input-container>
+                                <label>Enter username of user</label>
+                                <input id="admin-input-userToCourse-username" ng-model="adminVm.userToCourse.username"/>
+                            </md-input-container>
+                            <md-button id="admin-btn-addUserToCourse" class="md-raised md-primary" ng-click="adminVm.addUserToCourse()">Save</md-button>
+                        </form>
+                    </div>
+                </md-content>
+            </div>
+        </div>
+    </div>
+</section>

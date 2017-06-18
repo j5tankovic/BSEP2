@@ -19,6 +19,7 @@
 package net.continuumsecurity.web;
 
 import net.continuumsecurity.Config;
+import net.continuumsecurity.TestingOption;
 import net.continuumsecurity.UnexpectedContentException;
 import net.continuumsecurity.clients.AuthTokenManager;
 import net.continuumsecurity.clients.Browser;
@@ -68,8 +69,18 @@ public class WebApplication extends Application {
         return browser.getWebDriver().findElement(by);
     }
 
+    public WebElement findAndWaitForElementToBeClickable(By by) {
+        try {
+            WebDriverWait wait = new WebDriverWait(browser.getWebDriver(), 10);
+            wait.until(ExpectedConditions.elementToBeClickable(by));
+        } catch (TimeoutException e) {
+            throw new NoSuchElementException(e.getMessage());
+        }
+        return browser.getWebDriver().findElement(by);
+    }
+
     public void navigate() {
-        browser.getWebDriver().get(Config.getInstance().getBaseUrl());
+        browser.getWebDriver().get(Config.getInstance().getBaseUrl(TestingOption.SERVICE));
     }
 
     @Override

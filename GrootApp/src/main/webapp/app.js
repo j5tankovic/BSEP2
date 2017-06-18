@@ -24,7 +24,7 @@
 
             var publicRoutes = ["/login"];
             var restrictedRoutesForLoggedUser = ["/login"];
-            var allowedRoutesForAdmin = ["/admin", "admin/courses", "admin/people"];
+            var allowedRoutesForAdmin = ["/admin", "admin/courses", "admin/people", "/profile"];
             var adminRoutes = ["/admin"];
 
             var routeIsIn = function (routes, currentRoute) {
@@ -45,9 +45,6 @@
 
                 if (!routeIsIn(publicRoutes, $location.url()) && !loggedUser) {
                     $location.path('/login');
-                }
-                else if (routeIsIn(adminRoutes, $location.url()) && !roleService.isAdmin(loggedUser)) {
-                    $location.path(from.url);
                 }
                 else if (!routeIsIn(allowedRoutesForAdmin, $location.url()) && roleService.isAdmin(loggedUser)) {
                     $location.path("/admin");

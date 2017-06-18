@@ -24,7 +24,7 @@
 </connection>
 <proxy>
 		<ip>127.0.0.1</ip>
-		<port>51541</port>
+		<port>49807</port>
 		<reverseProxy>
 			<use>0</use>	
 			<ip>localhost</ip>
@@ -62,7 +62,7 @@
 		<processform>true</processform>
 		<sendCookies>false</sendCookies>
 		<skipurl/>
-		<requestwait>200</requestwait>
+		<requestwait>20</requestwait>
 		<parseComments>true</parseComments>
 		<parseRobotsTxt>true</parseRobotsTxt>
 	<handleParameters>USE_ALL</handleParameters>

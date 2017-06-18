@@ -1,0 +1,11 @@
+role, allowed_url, allowed_action
+student, /profile, editProfile
+teacher, /courses/*/announcements, addAnnouncement
+teacher, /courses/*/announcements/*, editAnnouncement
+teacher, /courses/*/announcements/*, deleteAnnouncement
+teacher, /profile, editProfile
+admin, /admin/users, addUser
+admin, /admin/users, deleteUser
+admin, /admin/courses, addCourse
+admin, /admin/courses, deleteCourse
+admin, /admin/userToCourse, addUserToCourse

@@ -21,7 +21,7 @@ public class ZapManager {
     private static ZapManager instance = null;
     private int port;
     String HOST = "127.0.0.1";
-    int CONNECTION_TIMEOUT = 150000; //milliseconds
+    int CONNECTION_TIMEOUT = 20000; //milliseconds
     public static final String API_KEY = "zapapisecret";
     Process process;
 

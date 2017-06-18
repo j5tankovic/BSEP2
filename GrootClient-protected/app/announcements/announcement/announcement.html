@@ -1,0 +1,35 @@
+<section>
+    <div layout="row">
+        <div flex-gt-sm="70" flex>
+            <h1 class="md-headline">{{announcementVm.announcement.author.name}}</h1>
+        </div>
+        <div ng-if="announcementVm.loggedUser.role == 'TEACHER' && !announcementVm.isAnnouncementFormVisible">
+            <md-button class="md-raised md-accent"  id="announcement-btn-edit" ng-click="announcementVm.toggleFormVisibility()">Edit</md-button>
+            <md-button class="md-raised md-accent"  id="announcement-btn-delete" ng-click="announcementVm.delete()">Delete</md-button>
+        </div>
+        <div ng-if="announcementVm.loggedUser.role == 'TEACHER' && announcementVm.isAnnouncementFormVisible">
+            <md-button class="md-raised md-accent" id="announcement-btn-cancel" ng-click="announcementVm.toggleFormVisibility()">Cancel</md-button>
+        </div>
+    </div>
+    <div ng-if="!announcementVm.isAnnouncementFormVisible">
+        <h1>{{announcementVm.announcement.title}}</h1>
+        <div>{{announcementVm.announcement.content}}</div>
+    </div>
+    <div ng-if="announcementVm.isAnnouncementFormVisible">
+        <md-content layout-padding layout-align="center center">
+            <div flex-gt-md="40" md-whiteframe="3">
+                <form layout="column">
+                        <md-input-container>
+                            <label>Title</label>
+                            <input id="announcement-input-title" ng-model="announcementVm.announcement.title"/>
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Content</label>
+                            <textarea id="announcement-textarea-content" ng-model="announcementVm.announcement.content" rows="3"></textarea>
+                        </md-input-container>
+                    <md-button id="announcement-btn-save" class="md-raised md-primary" ng-click="announcementVm.edit()">Save</md-button>
+                </form>
+            </div>
+        </md-content>
+    </div>
+</section>

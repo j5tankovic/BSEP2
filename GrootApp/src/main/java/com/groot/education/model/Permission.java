@@ -9,5 +9,6 @@ public enum Permission {
     ADD_USER,
     DELETE_USER,
     ADD_COURSE,
-    DELETE_COURSE
+    DELETE_COURSE,
+    ADD_USER_TO_COURSE
 }

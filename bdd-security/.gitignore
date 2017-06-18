@@ -3,6 +3,7 @@
 /target
 build/
 zap/tmp
+src/test/resources/features/
 .gradle
 *.iml
 *.output

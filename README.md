@@ -25,7 +25,7 @@ I obrnuto važi...korisniku je sve dostupno i vidljivo ukoliko ima za to dozvolu
   
 Mora postojati lokalna MySQL baza podataka sa korisnikom *root* koji ima šifru *root*, i u njoj šema **grootedu**
 ```SQL
-CREATE SCHEMA `parliament` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA `grootedu` DEFAULT CHARACTER SET utf8 ;
  ```
  U Intellij-u napraviti Spring Boot konfiguraciju i pokrenuti.
  

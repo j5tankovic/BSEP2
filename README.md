@@ -64,5 +64,6 @@ CREATE SCHEMA `parliament` DEFAULT CHARACTER SET utf8 ;
  ```
  U međuvremenu skuvati kafu (mozda i odgledati epizodu Prijatelja ili preslušati [GoTG Awesome Mix Vol.2](https://youtu.be/0TqM7F11LA4)) i vratiti se dragom Selenium-u koji je za to vreme zavšio svoj posao. :)
  
+ 
  Rezultati izvršavanja testova nalaziće se na putanji *bdd-security/build/reports/cucumber/pretty/feature_overview.html*
  

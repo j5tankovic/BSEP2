@@ -25,7 +25,7 @@ I obrnuto važi...korisniku je sve dostupno i vidljivo ukoliko ima za to dozvolu
   
 Mora postojati lokalna MySQL baza podataka sa korisnikom *root* koji ima šifru *root*, i u njoj šema **grootedu**
 ```SQL
-CREATE SCHEMA `parliament` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA `grootedu` DEFAULT CHARACTER SET utf8 ;
  ```
  U Intellij-u napraviti Spring Boot konfiguraciju i pokrenuti.
  
@@ -45,7 +45,7 @@ CREATE SCHEMA `parliament` DEFAULT CHARACTER SET utf8 ;
  ```
  
  #### FeatureParser
- Pokrenuti sa komandom:
+ Pokrenuti komandom:
  ```python
  python rules_to_scenarios.py putanja_do_ulaznog_fajla
  ```
@@ -58,11 +58,12 @@ CREATE SCHEMA `parliament` DEFAULT CHARACTER SET utf8 ;
  gradle clean
  ```
  
- Testiranje pokrenuti sa komandom:
+ Testiranje pokrenuti komandom:
  ```gradle
  gradle -Dcucumber.options="--tags @access_control_service,@access_control_client"
  ```
- U međuvremenu skuvati kafu (mozda i odgledati epizodu Prijatelja ili preslušati [GoTG Awesome Mix Vol.2](https://youtu.be/0TqM7F11LA4)) i vratiti se dragom Selenium-u koji je za to vreme zavšio svoj posao. :)
+ U međuvremenu skuvati kafu (mozda i odgledati epizodu Prijatelja ili preslušati [GoTG Awesome Mix Vol.2](https://youtu.be/0TqM7F11LA4)) i vratiti se dragom Selenium-u koji je za to vreme završio svoj posao. :)
+ 
  
  Rezultati izvršavanja testova nalaziće se na putanji *bdd-security/build/reports/cucumber/pretty/feature_overview.html*
  
